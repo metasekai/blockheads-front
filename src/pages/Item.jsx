@@ -69,6 +69,7 @@ export default function ItemDetails() {
   const cardBg = useColorModeValue("white", "gray.700");
   const cardBorder = useColorModeValue("gray.200", "gray.600");
   const skillName = useColorModeValue("gray.700", "gray.500");
+  const skillDescription = useColorModeValue("gray.500", "gray.300");
 
   return (
     <Flex flexDirection="row" pt={{ base: "120px", md: "75px" }}>
@@ -170,7 +171,7 @@ export default function ItemDetails() {
                     objectFit={"contain"}
                     boxSize="40px"
                   />
-                  <Text fontSize="xl" fontWeight="bold" ml={2}>
+                  <Text fontSize="xl" fontWeight="bold" ml={1}>
                     {item.vitality}
                   </Text>
                 </Flex>
@@ -187,7 +188,7 @@ export default function ItemDetails() {
                     objectFit={"contain"}
                     boxSize="40px"
                   />
-                  <Text fontSize="xl" fontWeight="bold" ml={2}>
+                  <Text fontSize="xl" fontWeight="bold" ml={1}>
                     {item.strength}
                   </Text>
                 </Flex>
@@ -204,7 +205,7 @@ export default function ItemDetails() {
                     objectFit={"contain"}
                     boxSize="40px"
                   />
-                  <Text fontSize="xl" fontWeight="bold" ml={2}>
+                  <Text fontSize="xl" fontWeight="bold" ml={1}>
                     {item.defense}
                   </Text>
                 </Flex>
@@ -222,7 +223,7 @@ export default function ItemDetails() {
                     objectFit={"contain"}
                     boxSize="40px"
                   />
-                  <Text fontSize="xl" fontWeight="bold" ml={2}>
+                  <Text fontSize="xl" fontWeight="bold" ml={1}>
                     {item.morale}
                   </Text>
                 </Flex>
@@ -239,7 +240,7 @@ export default function ItemDetails() {
                     objectFit={"contain"}
                     boxSize="40px"
                   />
-                  <Text fontSize="xl" fontWeight="bold" ml={2}>
+                  <Text fontSize="xl" fontWeight="bold" ml={1}>
                     {item.agility}
                   </Text>
                 </Flex>
@@ -260,7 +261,7 @@ export default function ItemDetails() {
             <Text fontSize="lg" color="gray.400" fontWeight="bold">
               SKILLS
             </Text>
-            <Stack spacing={8} mt={4}>
+            <Stack spacing={4} mt={4}>
               {item.skills.map((skill, key) => (
                 <Box
                   p={3}
@@ -284,7 +285,7 @@ export default function ItemDetails() {
                   >
                     {skill.name}
                   </Text>
-                  <Text color="gray.400">{skill.description}</Text>
+                  <Text color={skillDescription}>{skill.description}</Text>
                 </Box>
               ))}
             </Stack>

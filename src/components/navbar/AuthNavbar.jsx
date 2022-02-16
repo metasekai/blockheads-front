@@ -94,7 +94,7 @@ export default function AuthNavbar(props) {
           me={{ sm: "2px", md: "16px" }}
           color={navbarIcon}
           variant="transparent-with-icon"
-          leftIcon={<HomeIcon color={navbarIcon} w="12px" h="12px" me="0px" />}
+          leftIcon={<HomeIcon color={navbarIcon} w="18px" h="18px" me="0px" />}
         >
           <Text>Marketplace</Text>
         </Button>
@@ -109,7 +109,7 @@ export default function AuthNavbar(props) {
           color={navbarIcon}
           variant="transparent-with-icon"
           leftIcon={
-            <PersonIcon color={navbarIcon} w="12px" h="12px" me="0px" />
+            <PersonIcon color={navbarIcon} w="18px" h="18px" me="0px" />
           }
         >
           <Text>Inventory</Text>
@@ -125,7 +125,7 @@ export default function AuthNavbar(props) {
           color={navbarIcon}
           variant="transparent-with-icon"
           leftIcon={
-            <RocketIcon color={navbarIcon} w="12px" h="12px" me="0px" />
+            <RocketIcon color={navbarIcon} w="18px" h="18px" me="0px" />
           }
         >
           <Text>Mint</Text>

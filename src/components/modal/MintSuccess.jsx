@@ -148,7 +148,7 @@ function MintSuccess(props) {
                           objectFit={"contain"}
                           boxSize="30px"
                         />
-                        <Text fontSize="md" fontWeight="bold">
+                        <Text fontSize="md" fontWeight="bold" ml={1}>
                           {item.vitality}
                         </Text>
                       </Flex>
@@ -165,7 +165,7 @@ function MintSuccess(props) {
                           objectFit={"contain"}
                           boxSize="30px"
                         />
-                        <Text fontSize="md" fontWeight="bold">
+                        <Text fontSize="md" fontWeight="bold" ml={1}>
                           {item.strength}
                         </Text>
                       </Flex>
@@ -182,7 +182,7 @@ function MintSuccess(props) {
                           objectFit={"contain"}
                           boxSize="30px"
                         />
-                        <Text fontSize="md" fontWeight="bold">
+                        <Text fontSize="md" fontWeight="bold" ml={1}>
                           {item.defense}
                         </Text>
                       </Flex>
@@ -200,7 +200,7 @@ function MintSuccess(props) {
                           objectFit={"contain"}
                           boxSize="30px"
                         />
-                        <Text fontSize="md" fontWeight="bold">
+                        <Text fontSize="md" fontWeight="bold" ml={1}>
                           {item.morale}
                         </Text>
                       </Flex>
@@ -217,7 +217,7 @@ function MintSuccess(props) {
                           objectFit={"contain"}
                           boxSize="30px"
                         />
-                        <Text fontSize="md" fontWeight="bold">
+                        <Text fontSize="md" fontWeight="bold" ml={1}>
                           {item.agility}
                         </Text>
                       </Flex>

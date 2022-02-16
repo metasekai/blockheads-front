@@ -35,12 +35,11 @@ const minted = {
 
 function Mint() {
   const [selected, setSelected] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const titleColor = useColorModeValue("teal.300", "teal.200");
   const textColor = useColorModeValue("gray.700", "white");
   const bgColor = useColorModeValue("white", "gray.700");
-  const bgIcons = useColorModeValue("teal.200", "rgba(255, 255, 255, 0.5)");
 
   const nfts = [
     ZombieMale,
@@ -52,6 +51,16 @@ function Mint() {
     ShinobiMale,
     ZombieFemale,
   ];
+
+  const handleOnApprove = () => {
+    setLoading(true);
+    const timeout = setTimeout(() => {
+      setLoading(false);
+      onOpen();
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -134,7 +143,7 @@ function Mint() {
               fontWeight="bold"
               textAlign="center"
             >
-              1 NFT costs 0.02 BUSD
+              1 NFT costs 0.02 USDT
             </Text>
             <Text
               fontSize="lg"
@@ -151,7 +160,9 @@ function Mint() {
             </Text>
 
             <Button
-              onClick={onOpen}
+              onClick={handleOnApprove}
+              isLoading={loading}
+              loadingText="Submitting"
               type="submit"
               bg="teal.300"
               fontSize="sm"
