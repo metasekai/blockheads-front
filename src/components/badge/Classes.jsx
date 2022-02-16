@@ -8,7 +8,7 @@ export default function Classes({ name }) {
         <Badge
           bg={"blue.800"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -21,7 +21,7 @@ export default function Classes({ name }) {
         <Badge
           bg={"red.700"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -34,7 +34,7 @@ export default function Classes({ name }) {
         <Badge
           bg={"gray.400"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -47,7 +47,7 @@ export default function Classes({ name }) {
         <Badge
           bg={"cyan.700"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -60,7 +60,7 @@ export default function Classes({ name }) {
         <Badge
           bg={"purple.700"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -73,7 +73,7 @@ export default function Classes({ name }) {
         <Badge
           bg={"blue.800"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"

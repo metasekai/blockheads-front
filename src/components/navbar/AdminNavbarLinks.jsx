@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
-import { ProfileIcon, SettingsIcon } from "../icons/Icons";
+import {
+  Button,
+  Flex,
+  Box,
+  useColorModeValue,
+  useColorMode,
+} from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { SidebarResponsive } from "../sidebar/Sidebar";
 
 import routes from "../../routes";
@@ -11,22 +17,12 @@ export default function HeaderLinks(props) {
     props;
 
   // Chakra Color Mode
-  let mainTeal = useColorModeValue("teal.300", "teal.300");
-  let inputBg = useColorModeValue("white", "gray.800");
-  let mainText = useColorModeValue("gray.700", "gray.200");
-  let navbarIcon = useColorModeValue("gray.500", "gray.200");
-  let searchIcon = useColorModeValue("gray.700", "gray.200");
+  const { colorMode, toggleColorMode } = useColorMode();
   let colorButton = "white";
   let bgButton = useColorModeValue(
     "linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)",
-    "gray.800"
+    "gray.600"
   );
-
-  if (secondary) {
-    navbarIcon = "white";
-    mainText = "white";
-  }
-  const settingsRef = React.useRef();
 
   return (
     <Flex
@@ -46,7 +42,7 @@ export default function HeaderLinks(props) {
           sm: "none",
           lg: "flex",
         }}
-        mr={4}
+        mr={2}
       >
         Connect Wallet
       </Button>
@@ -56,16 +52,9 @@ export default function HeaderLinks(props) {
         routes={routes}
         {...rest}
       />
-      <SettingsIcon
-        cursor="pointer"
-        ms={{ base: "16px", xl: "0px" }}
-        me="16px"
-        ref={settingsRef}
-        onClick={props.onOpen}
-        color={navbarIcon}
-        w="18px"
-        h="18px"
-      />
+      <Box onClick={toggleColorMode} _hover={{ cursor: "pointer" }}>
+        {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+      </Box>
     </Flex>
   );
 }

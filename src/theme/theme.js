@@ -14,8 +14,8 @@ import { PanelContentComponent } from "./additions/layout/PanelContent";
 import { PanelContainerComponent } from "./additions/layout/PanelContainer";
 // import { mode } from "@chakra-ui/theme-tools";
 const config = {
-  initialColorMode: "light",
-  useSystemColorMode: false,
+  initialColorMode: "dark",
+  useSystemColorMode: true,
 };
 
 export default extendTheme(

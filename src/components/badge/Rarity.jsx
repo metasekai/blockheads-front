@@ -6,9 +6,9 @@ export default function Rarity({ name }) {
     case "common":
       return (
         <Badge
-          bg={"green.200"}
+          bgGradient={"linear(green.200 0%, green.500 90%)"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -19,9 +19,9 @@ export default function Rarity({ name }) {
     case "rare":
       return (
         <Badge
-          bg={"pink.200"}
+          bgGradient={"linear(pink.300 0%, pink.600 90%)"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -32,9 +32,9 @@ export default function Rarity({ name }) {
     case "epic":
       return (
         <Badge
-          bg={"teal.300"}
+          bgGradient={"linear(cyan.400 0%, teal.600 70%)"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -45,9 +45,9 @@ export default function Rarity({ name }) {
     case "legend":
       return (
         <Badge
-          bg={"orange.400"}
+          bgGradient={"linear(red.400 0%, orange.300 90%)"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -58,9 +58,9 @@ export default function Rarity({ name }) {
     default:
       return (
         <Badge
-          bg={"green.200"}
+          bgGradient={"linear(green.200 0%, green.500 90%)"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"

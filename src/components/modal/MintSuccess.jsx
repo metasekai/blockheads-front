@@ -7,16 +7,14 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
   Text,
   Flex,
   Spacer,
-  useColorMode,
-  useColorModeValue,
+  Grid,
+  GridItem,
   Image,
   HStack,
   Box,
-  Badge,
 } from "@chakra-ui/react";
 
 import Health from "../../assets/img/health.png";
@@ -48,15 +46,15 @@ function MintSuccess(props) {
   const GetRarity = (name) => {
     switch (name) {
       case "common":
-        return "green.200";
+        return "linear(green.200 0%, green.500 90%)";
       case "rare":
-        return "pink.200";
+        return "linear(pink.300 0%, pink.600 90%)";
       case "epic":
-        return "teal.300";
+        return "linear(cyan.400 0%, teal.600 70%)";
       case "legend":
-        return "orange.400";
+        return "linear(red.400 0%, orange.300 90%)";
       default:
-        return "green.300";
+        return "linear(green.400 0%, green.400 90%)";
     }
   };
 
@@ -70,7 +68,7 @@ function MintSuccess(props) {
           <ModalBody>
             <Flex flexDirection={{ sm: "column", lg: "row" }} w="100%">
               <Flex
-                bg={GetRarity(item.rarity)}
+                bgGradient={GetRarity(item.rarity)}
                 align="center"
                 justify="center"
                 borderRadius="15px"
@@ -112,38 +110,41 @@ function MintSuccess(props) {
                   flex="1"
                   borderRadius="md"
                 >
-                  <HStack spacing={16} mb={2}>
-                    <Flex flexDirection="column">
+                  <Text fontSize="lg" color="gray.400" fontWeight="bold">
+                    ABOUT
+                  </Text>
+                  <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+                    <GridItem flexDirection="column">
                       <Text fontSize="md" color="gray.400" fontWeight="bold">
                         ID
                       </Text>
                       <Text fontSize="md" fontWeight="bold">
                         #{item.id}
                       </Text>
-                    </Flex>
+                    </GridItem>
 
-                    <Flex flexDirection="column" align="flex-start">
+                    <GridItem flexDirection="column" align="flex-start">
                       <Text fontSize="md" color="gray.400" fontWeight="bold">
                         CLASS
                       </Text>
                       <Classes name={item.class} />
-                    </Flex>
-                  </HStack>
-                  <HStack spacing={14}>
-                    <Flex flexDirection="column">
+                    </GridItem>
+                  </Grid>
+                  <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+                    <GridItem flexDirection="column">
                       <Text fontSize="md" color="gray.400" fontWeight="bold">
                         TYPE
                       </Text>
                       <Type name={item.type} />
-                    </Flex>
+                    </GridItem>
 
-                    <Flex flexDirection="column" align="flex-start">
+                    <GridItem flexDirection="column" align="flex-start">
                       <Text fontSize="md" color="gray.400" fontWeight="bold">
                         RARITY
                       </Text>
                       <Rarity name={item.rarity} />
-                    </Flex>
-                  </HStack>
+                    </GridItem>
+                  </Grid>
                 </Box>
 
                 <Box
@@ -154,8 +155,11 @@ function MintSuccess(props) {
                   flex="1"
                   borderRadius="md"
                 >
-                  <HStack spacing={8}>
-                    <Flex flexDirection="column">
+                  <Text fontSize="lg" color="gray.400" fontWeight="bold">
+                    STATS
+                  </Text>
+                  <Grid templateColumns="repeat(3, 1fr)" gap={6} my={2}>
+                    <GridItem>
                       <Text fontSize="md" color="gray.400" letterSpacing={1}>
                         Vitality
                       </Text>
@@ -170,9 +174,9 @@ function MintSuccess(props) {
                           {item.vitality}
                         </Text>
                       </Flex>
-                    </Flex>
+                    </GridItem>
 
-                    <Flex flexDirection="column" align="flex-start">
+                    <GridItem>
                       <Text fontSize="md" color="gray.400" letterSpacing={1}>
                         Strength
                       </Text>
@@ -187,8 +191,8 @@ function MintSuccess(props) {
                           {item.strength}
                         </Text>
                       </Flex>
-                    </Flex>
-                    <Flex flexDirection="column" align="flex-start">
+                    </GridItem>
+                    <GridItem>
                       <Text fontSize="md" color="gray.400" letterSpacing={1}>
                         Defense
                       </Text>
@@ -204,10 +208,10 @@ function MintSuccess(props) {
                           {item.defense}
                         </Text>
                       </Flex>
-                    </Flex>
-                  </HStack>
-                  <HStack spacing={8}>
-                    <Flex flexDirection="column">
+                    </GridItem>
+                  </Grid>
+                  <Grid templateColumns="repeat(3, 1fr)" gap={6} my={2}>
+                    <GridItem>
                       <Text fontSize="md" color="gray.400" letterSpacing={1}>
                         Morale
                       </Text>
@@ -222,9 +226,9 @@ function MintSuccess(props) {
                           {item.morale}
                         </Text>
                       </Flex>
-                    </Flex>
+                    </GridItem>
 
-                    <Flex flexDirection="column" align="flex-start">
+                    <GridItem>
                       <Text fontSize="md" color="gray.400" letterSpacing={1}>
                         Agility
                       </Text>
@@ -239,8 +243,8 @@ function MintSuccess(props) {
                           {item.agility}
                         </Text>
                       </Flex>
-                    </Flex>
-                  </HStack>
+                    </GridItem>
+                  </Grid>
                 </Box>
               </Flex>
             </Flex>

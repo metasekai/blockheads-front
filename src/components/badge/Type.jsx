@@ -6,9 +6,9 @@ export default function Type({ name }) {
     case "male":
       return (
         <Badge
-          bg={"yellow.300"}
+          bg={"teal.800"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -19,9 +19,22 @@ export default function Type({ name }) {
     case "female":
       return (
         <Badge
-          bg={"orange.300"}
+          bg={"red.300"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
+          p="3px 10px"
+          borderRadius="8px"
+          textTransform="uppercase"
+        >
+          {name}
+        </Badge>
+      );
+    case "neutral":
+      return (
+        <Badge
+          bg={"blue.300"}
+          color={"white"}
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
@@ -34,7 +47,7 @@ export default function Type({ name }) {
         <Badge
           bg={"yellow.300"}
           color={"white"}
-          fontSize="12px"
+          fontSize="10px"
           p="3px 10px"
           borderRadius="8px"
           textTransform="uppercase"
