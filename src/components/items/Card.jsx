@@ -1,4 +1,5 @@
 import { Box, Wrap, Text, useColorModeValue } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import ImageRender from "./ImageRender";
 import Classes from "../badge/Classes";
 import Type from "../badge/Type";
@@ -6,6 +7,7 @@ import Rarity from "../badge/Rarity";
 
 export default function Card(props) {
   const { item, priceView } = props;
+  const navigate = useNavigate();
 
   let boxBackground = useColorModeValue("white", "gray.800");
   let boxBorder = useColorModeValue("white", "gray.700");
@@ -27,6 +29,7 @@ export default function Card(props) {
       }}
       px={2}
       py={4}
+      onClick={() => navigate(`/marketplace/${item.id}`, { id: item.id })}
     >
       <Box fontWeight="semibold" letterSpacing={1} isTruncated>
         #{item.id}

@@ -13,7 +13,6 @@ import {
   Grid,
   GridItem,
   Image,
-  HStack,
   Box,
 } from "@chakra-ui/react";
 
@@ -22,10 +21,10 @@ import Strength from "../../assets/img/strength.png";
 import Shield from "../../assets/img/shield.png";
 import Morale from "../../assets/img/morale.png";
 import Speed from "../../assets/img/speed.png";
-import { KnightRun } from "../sprites/Actions";
 import Classes from "../badge/Classes";
 import Type from "../badge/Type";
-import Rarity from "../badge/Rarity";
+import Rarity, { GetRarity } from "../badge/Rarity";
+import SpriteRender from "../items/SpriteRender";
 
 function MintSuccess(props) {
   const { isOpen, onClose, item } = props;
@@ -42,21 +41,6 @@ function MintSuccess(props) {
     }, 50);
     return () => clearInterval(interval);
   }, [selected]);
-
-  const GetRarity = (name) => {
-    switch (name) {
-      case "common":
-        return "linear(green.200 0%, green.500 90%)";
-      case "rare":
-        return "linear(pink.300 0%, pink.600 90%)";
-      case "epic":
-        return "linear(cyan.400 0%, teal.600 70%)";
-      case "legend":
-        return "linear(red.400 0%, orange.300 90%)";
-      default:
-        return "linear(green.400 0%, green.400 90%)";
-    }
-  };
 
   return (
     <>
@@ -75,13 +59,7 @@ function MintSuccess(props) {
                 width={{ lg: "40%" }}
                 minHeight={{ sm: "250px" }}
               >
-                <Image
-                  src={KnightRun[selected]}
-                  alt="nft collections"
-                  objectFit={"contain"}
-                  boxSize="250px"
-                  m={8}
-                />
+                <SpriteRender item={item} />
               </Flex>
               <Spacer />
 
@@ -202,7 +180,7 @@ function MintSuccess(props) {
                           src={Shield}
                           alt="hp icon"
                           objectFit={"contain"}
-                          boxSize="25px"
+                          boxSize="30px"
                         />
                         <Text fontSize="md" fontWeight="bold">
                           {item.defense}
@@ -237,7 +215,7 @@ function MintSuccess(props) {
                           src={Speed}
                           alt="hp icon"
                           objectFit={"contain"}
-                          boxSize="25px"
+                          boxSize="30px"
                         />
                         <Text fontSize="md" fontWeight="bold">
                           {item.agility}

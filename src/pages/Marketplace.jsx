@@ -299,7 +299,7 @@ export default function Marketplace() {
             <CardBody>
               <Wrap justify="center">
                 {items.map((item, key) => {
-                  return <ItemCard item={item} priceView={true} />;
+                  return <ItemCard key={key} item={item} priceView={true} />;
                 })}
               </Wrap>
             </CardBody>

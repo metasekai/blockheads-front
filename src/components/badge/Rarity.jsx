@@ -70,3 +70,18 @@ export default function Rarity({ name }) {
       );
   }
 }
+
+export const GetRarity = (name) => {
+  switch (name) {
+    case "common":
+      return "linear(green.200 0%, green.500 90%)";
+    case "rare":
+      return "linear(pink.300 0%, pink.600 90%)";
+    case "epic":
+      return "linear(cyan.400 0%, teal.600 70%)";
+    case "legend":
+      return "linear(red.400 0%, orange.300 90%)";
+    default:
+      return "linear(green.400 0%, green.400 90%)";
+  }
+};

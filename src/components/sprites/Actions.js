@@ -50,6 +50,8 @@ import RobotRun5 from "../../assets/img/robot-run/action-5.png";
 import RobotRun6 from "../../assets/img/robot-run/action-6.png";
 import RobotRun7 from "../../assets/img/robot-run/action-7.png";
 import RobotRun8 from "../../assets/img/robot-run/action-8.png";
+import RobotRun9 from "../../assets/img/robot-run/action-9.png";
+import RobotRun10 from "../../assets/img/robot-run/action-10.png";
 
 import KnightRun1 from "../../assets/img/knight-run/action-1.png";
 import KnightRun2 from "../../assets/img/knight-run/action-2.png";
@@ -81,6 +83,8 @@ import CowboyFemaleRun5 from "../../assets/img/cowboy-female-run/action-5.png";
 import CowboyFemaleRun6 from "../../assets/img/cowboy-female-run/action-6.png";
 import CowboyFemaleRun7 from "../../assets/img/cowboy-female-run/action-7.png";
 import CowboyFemaleRun8 from "../../assets/img/cowboy-female-run/action-8.png";
+import CowboyFemaleRun9 from "../../assets/img/cowboy-female-run/action-9.png";
+import CowboyFemaleRun10 from "../../assets/img/cowboy-female-run/action-10.png";
 
 export const ZombieFemaleWalk = [
   ZombieFemaleWalk1,
@@ -143,6 +147,8 @@ export const RobotRun = [
   RobotRun6,
   RobotRun7,
   RobotRun8,
+  RobotRun9,
+  RobotRun10,
 ];
 
 export const KnightRun = [
@@ -180,4 +186,6 @@ export const CowboyFemaleRun = [
   CowboyFemaleRun6,
   CowboyFemaleRun7,
   CowboyFemaleRun8,
+  CowboyFemaleRun9,
+  CowboyFemaleRun10,
 ];

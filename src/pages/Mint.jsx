@@ -19,11 +19,10 @@ import Robot from "../assets/img/robot.png";
 import ShinobiFemale from "../assets/img/shinobi-female.png";
 import ShinobiMale from "../assets/img/shinobi-male.png";
 import ZombieFemale from "../assets/img/zombie-female.png";
-import { KnightRun } from "../components/sprites/Actions";
 
 const minted = {
   id: 1215,
-  sprite: KnightRun,
+  sprite: "knight",
   class: "knight",
   type: "male",
   rarity: "legend",
