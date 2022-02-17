@@ -3,7 +3,6 @@ export const premintABI = [
   'function getTotalCharactersMinted() public view returns (uint256)',
   'event NewCharacterMinted(address indexed owner)',
   'event CharacterPriceChanged(uint256 newPrice)',
-  'uint256 public characterNFTPrice',
 ];
 
 export const characterABI = [

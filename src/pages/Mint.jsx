@@ -12,6 +12,7 @@ import ShinobiFemale from '../assets/img/shinobi-female.png';
 import ShinobiMale from '../assets/img/shinobi-male.png';
 import ZombieFemale from '../assets/img/zombie-female.png';
 import useApprove from '../hooks/useApprove';
+import useMintCharacter from '../hooks/useMintCharacter';
 import config from '../artifacts/config';
 
 const minted = {
@@ -34,7 +35,8 @@ function Mint() {
   const textColor = useColorModeValue('gray.700', 'white');
   const bgColor = useColorModeValue('white', 'gray.700');
 
-  const checkAllowance = useApprove(config.usdtAddress);
+  const checkAllowance = useApprove(config.daiAddress);
+  const minter = useMintCharacter();
 
   const nfts = [ZombieMale, CowboyFemale, CowboyMale, Knight, Robot, ShinobiFemale, ShinobiMale, ZombieFemale];
 
@@ -46,10 +48,18 @@ function Mint() {
     if (!checkAllowance.approved) {
       await checkAllowance.approveSpending();
     }
+    setLoading(false);
   };
 
   const handleMint = async () => {
     setLoading(true);
+
+    const minted = await minter.mintNewCharacter();
+
+    if (!minted) {
+      setLoading(false);
+      return;
+    }
 
     const timeout = setTimeout(() => {
       setLoading(false);
@@ -117,7 +127,7 @@ function Mint() {
               0/5000
             </Text>
             <Text fontSize="lg" color="gray.400" fontWeight="bold" textAlign="center">
-              1 NFT costs 0.02 USDT
+              1 NFT costs 0.02 DAI
             </Text>
             <Text fontSize="lg" color="gray.400" fontWeight="bold" textAlign="center" mb="22px">
               Excluding gas fees.
