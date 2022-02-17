@@ -1,15 +1,15 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text } from '@chakra-ui/react';
 
 export default function Footer() {
   return (
     <Flex
       flexDirection={{
-        base: "column",
-        xl: "row",
+        base: 'column',
+        xl: 'row',
       }}
       alignItems={{
-        base: "center",
-        xl: "start",
+        base: 'center',
+        xl: 'start',
       }}
       justifyContent="space-between"
       px="30px"
@@ -18,12 +18,12 @@ export default function Footer() {
       <Text
         color="gray.400"
         textAlign={{
-          base: "center",
-          xl: "start",
+          base: 'center',
+          xl: 'start',
         }}
-        mb={{ base: "20px", xl: "0px" }}
+        mb={{ base: '20px', xl: '0px' }}
       >
-        <Text as="span">Made with ❤️ </Text>
+        <Text as="span">Made with ❤️ by MetaSekai </Text>
       </Text>
     </Flex>
   );
