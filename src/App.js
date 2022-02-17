@@ -18,7 +18,6 @@ export default function App(props) {
   const [sidebarVariant, setSidebarVariant] = useState("transparent");
   const getActiveRoute = (routes) => {
     for (let i = 0; i < routes.length; i++) {
-      console.log(window.location.href);
       if (window.location.href.indexOf(routes[i].path) !== -1) {
         return routes[i];
       }

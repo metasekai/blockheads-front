@@ -19,7 +19,6 @@ import {
 import AdminNavbarLinks from "./AdminNavbarLinks";
 
 export default function AdminNavbar(props) {
-  console.log("AdminNavbar", props);
   const [scrolled, setScrolled] = useState(false);
   const { variant, children, fixed, secondary, brandText, onOpen, ...rest } =
     props;

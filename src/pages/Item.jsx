@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import {
   Flex,
   Text,
@@ -10,7 +11,9 @@ import {
   Box,
   Stack,
   Avatar,
+  Button,
 } from "@chakra-ui/react";
+import { AiFillTags, AiFillGift } from "react-icons/ai";
 
 import Health from "../assets/img/health.png";
 import Strength from "../assets/img/strength.png";
@@ -21,55 +24,17 @@ import Classes from "../components/badge/Classes";
 import Type from "../components/badge/Type";
 import Rarity, { GetRarity } from "../components/badge/Rarity";
 import SpriteRender from "../components/items/SpriteRender";
-
-const item = {
-  id: 1102,
-  sprite: "zombie",
-  class: "zombie",
-  type: "male",
-  rarity: "rare",
-  vitality: 43,
-  strength: 44,
-  defense: 41,
-  morale: 36,
-  agility: 12,
-  skills: [
-    {
-      id: 1,
-      icon: Strength,
-      name: "Netflix",
-      description:
-        "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
-    },
-    {
-      id: 2,
-      icon: Shield,
-      name: "Spotify",
-      description:
-        "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
-    },
-    {
-      id: 3,
-      icon: Health,
-      name: "Youtube",
-      description:
-        "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
-    },
-    {
-      id: 4,
-      icon: Speed,
-      name: "Facebook",
-      description:
-        "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
-    },
-  ],
-};
+import { itemsData } from "../utils/data";
 
 export default function ItemDetails() {
+  let { id } = useParams();
   const cardBg = useColorModeValue("white", "gray.700");
   const cardBorder = useColorModeValue("gray.200", "gray.600");
   const skillName = useColorModeValue("gray.700", "gray.500");
   const skillDescription = useColorModeValue("gray.500", "gray.300");
+
+  const item = itemsData.find((item) => item.id === parseInt(id, 10));
+  console.log("ItemDetails", item);
 
   return (
     <Flex flexDirection="row" pt={{ base: "120px", md: "75px" }}>
@@ -99,6 +64,46 @@ export default function ItemDetails() {
           lineHeight="1.6"
           width={{ lg: "55%" }}
         >
+          {item.owner ? (
+            <Stack direction="row" spacing={4} mb={4}>
+              <Button
+                leftIcon={<AiFillTags />}
+                colorScheme="blue"
+                variant="solid"
+                borderRadius={"5px"}
+              >
+                Sell
+              </Button>
+              <Button
+                leftIcon={<AiFillGift />}
+                colorScheme="blue"
+                variant="outline"
+                borderRadius={"8px"}
+              >
+                Gift
+              </Button>
+            </Stack>
+          ) : (
+            <Stack
+              direction="row"
+              spacing={4}
+              mb={4}
+              align="center"
+              justify="flex-end"
+            >
+              <Text fontSize="lg" fontWeight="bold">
+                {item.price} USDT
+              </Text>
+              <Button
+                leftIcon={<AiFillTags />}
+                colorScheme="blue"
+                variant="solid"
+                borderRadius={"5px"}
+              >
+                Buy
+              </Button>
+            </Stack>
+          )}
           <Box
             my={2}
             p={3}
@@ -264,6 +269,7 @@ export default function ItemDetails() {
             <Stack spacing={4} mt={4}>
               {item.skills.map((skill, key) => (
                 <Box
+                  key={key}
                   p={3}
                   shadow="md"
                   borderWidth="1px"

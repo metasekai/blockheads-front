@@ -48,7 +48,7 @@ export default function Card(props) {
           align="center"
           isTruncated
         >
-          0.02 USDT
+          {item.price} USDT
         </Text>
       )}
     </Box>

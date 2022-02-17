@@ -22,157 +22,7 @@ import ItemCard from "../components/items/Card";
 import Classes from "../components/badge/Classes";
 import Type from "../components/badge/Type";
 import Rarity from "../components/badge/Rarity";
-
-const items = [
-  {
-    id: 1204,
-    sprite: "cowboy",
-    class: "cowboy",
-    type: "male",
-    rarity: "epic",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 12,
-  },
-  {
-    id: 1205,
-    sprite: "zombie",
-    class: "zombie",
-    type: "male",
-    rarity: "common",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 12,
-  },
-  {
-    id: 1208,
-    sprite: "shinobi",
-    class: "shinobi",
-    type: "male",
-    rarity: "rare",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 12,
-  },
-  {
-    id: 1209,
-    sprite: "robot",
-    class: "robot",
-    type: "neutral",
-    rarity: "common",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 12,
-  },
-  {
-    id: 1210,
-    sprite: "knight",
-    class: "knight",
-    type: "male",
-    rarity: "legend",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 12,
-  },
-  {
-    id: 1211,
-    sprite: "cowboy",
-    class: "cowboy",
-    type: "female",
-    rarity: "common",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 12,
-  },
-  {
-    id: 1212,
-    sprite: "zombie",
-    class: "zombie",
-    type: "female",
-    rarity: "epic",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 22,
-  },
-  {
-    id: 1213,
-    sprite: "shinobi",
-    class: "shinobi",
-    type: "female",
-    rarity: "epic",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 22,
-  },
-  {
-    id: 1215,
-    sprite: "knight",
-    class: "knight",
-    type: "male",
-    rarity: "legend",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 12,
-  },
-  {
-    id: 1216,
-    sprite: "cowboy",
-    class: "cowboy",
-    type: "female",
-    rarity: "common",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 12,
-  },
-  {
-    id: 1218,
-    sprite: "zombie",
-    class: "zombie",
-    type: "female",
-    rarity: "epic",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 22,
-  },
-  {
-    id: 1219,
-    sprite: "shinobi",
-    class: "shinobi",
-    type: "female",
-    rarity: "epic",
-    vitality: 43,
-    strength: 44,
-    defense: 41,
-    morale: 36,
-    agility: 22,
-  },
-];
-
-const classData = ["cowboy", "knight", "robot", "shinobi", "zombie"];
-const typesData = ["male", "female", "neutral"];
-const rarityData = ["common", "rare", "epic", "legend"];
+import { itemsData, classData, typesData, rarityData } from "../utils/data";
 
 export default function Marketplace() {
   const [checkedItems, setCheckedItems] = React.useState(["legend", "zombie"]);
@@ -191,6 +41,8 @@ export default function Marketplace() {
       setCheckedItems(newCheckedItems);
     }
   };
+
+  const marketplaceItems = itemsData.filter((item) => item.owner === false);
 
   return (
     <Flex flexDirection="row" pt={{ base: "120px", md: "75px" }}>
@@ -293,13 +145,15 @@ export default function Marketplace() {
           <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
-                {items.length} Characters
+                {marketplaceItems.length} Characters
               </Text>
             </CardHeader>
             <CardBody>
               <Wrap justify="center">
-                {items.map((item, key) => {
-                  return <ItemCard key={key} item={item} priceView={true} />;
+                {marketplaceItems.map((item, key) => {
+                  return (
+                    <ItemCard key={key} item={item} priceView={!item.owner} />
+                  );
                 })}
               </Wrap>
             </CardBody>

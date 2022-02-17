@@ -4,7 +4,9 @@ const Main = (props) => {
   return (
     <Routes>
       {props.routes.map((route) => {
-        return <Route path={route.path} element={route.element} />;
+        return (
+          <Route key={route.path} path={route.path} element={route.element} />
+        );
       })}
     </Routes>
   );
