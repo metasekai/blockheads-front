@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 // Chakra imports
-import { Button, Flex, HStack, Link, Text, useColorModeValue } from '@chakra-ui/react';
-import { CreativeTimLogo, HomeIcon, PersonIcon, RocketIcon } from '../icons/Icons';
+import { Button, Flex, HStack, Box, Text, Image, useColorModeValue } from '@chakra-ui/react';
+import { HomeIcon, PersonIcon, RocketIcon } from '../icons/Icons';
+import Logo from '../../assets/img/logo.png';
 
 import { useAuth } from '../../providers/AuthProvider';
 
@@ -40,9 +41,7 @@ export default function AuthNavbar(props) {
   }
 
   const brand = (
-    <Link
-      href={`${process.env.PUBLIC_URL}/#/`}
-      target="_blank"
+    <Box
       display="flex"
       lineHeight="100%"
       fontWeight="bold"
@@ -50,11 +49,11 @@ export default function AuthNavbar(props) {
       alignItems="center"
       color={mainText}
     >
-      <CreativeTimLogo w="32px" h="32px" me="10px" />
+      <Image src={Logo} boxSize={7} mr={2} />
       <Text fontSize="sm" mt="3px">
         {logoText}
       </Text>
-    </Link>
+    </Box>
   );
 
   const linksAuth = (
