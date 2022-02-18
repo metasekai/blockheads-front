@@ -27,15 +27,15 @@ const useTotalCharacterMinted = () => {
   }, [auth.provider]);
 
   useEffect(() => {
-    if (auth.address) {
-      fetchTotalSupply();
-    }
+    fetchTotalSupply();
+  }, [fetchTotalSupply]);
 
+  useEffect(() => {
     auth.provider.on('block', fetchTotalSupply);
     return () => {
       auth.provider.off('block', fetchTotalSupply);
     };
-  }, [auth.address, auth.provider, fetchTotalSupply]);
+  }, [auth.provider, fetchTotalSupply]);
 
   return { totalSupply, fetchTotalSupply };
 };
