@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useCallback } from 'react';
 import { useAuth } from '../providers/AuthProvider';
 import { ethers } from 'ethers';
@@ -5,6 +6,7 @@ import { premintABI } from '../artifacts/abi';
 import config from '../artifacts/config';
 
 const useMintCharacter = () => {
+  const [error, setError] = useState(null);
   const auth = useAuth();
 
   const mintNewCharacter = useCallback(async () => {
@@ -19,15 +21,17 @@ const useMintCharacter = () => {
       const receipt = await buyTx.wait();
 
       console.log('receipt', receipt);
+      setError(null);
       return true;
-    } catch (error) {
-      console.log('error', error);
-      alert(error.data.message);
+    } catch (err) {
+      console.log('error', err);
+      setError(err);
+      // alert(error.data.message);
       return false;
     }
   }, [auth.signer]);
 
-  return { mintNewCharacter };
+  return { mintNewCharacter, error };
 };
 
 export default useMintCharacter;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Flex, Image, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Text, useColorModeValue, useToast, useDisclosure } from '@chakra-ui/react';
 // Assets
 import MintSuccess from '../components/modal/MintSuccess';
 import Bg from '../assets/img/background.png';
@@ -14,6 +14,7 @@ import ZombieFemale from '../assets/img/zombie-female.png';
 import useApprove from '../hooks/useApprove';
 import useMintCharacter from '../hooks/useMintCharacter';
 import config from '../artifacts/config';
+import ErrorMessages from '../utils/errors';
 
 const minted = {
   id: 1215,
@@ -35,6 +36,7 @@ function Mint() {
   const textColor = useColorModeValue('gray.700', 'white');
   const bgColor = useColorModeValue('white', 'gray.700');
 
+  const toast = useToast();
   const checkAllowance = useApprove(config.daiAddress);
   const minter = useMintCharacter();
 
@@ -80,6 +82,20 @@ function Mint() {
     }, 600);
     return () => clearInterval(interval);
   }, [selected]);
+
+  useEffect(() => {
+    const err = minter.error;
+    if (err) {
+      toast({
+        position: 'top-right',
+        title: 'Error',
+        description: ErrorMessages[err.code].message,
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  }, [minter.error]);
 
   return (
     <>
