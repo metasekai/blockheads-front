@@ -7,6 +7,7 @@ on:
 
 env:
   AWS_REGION: ap-southeast-1
+  CI: false
 
 jobs:
   build:
