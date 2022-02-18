@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { useAuth } from '../providers/AuthProvider';
 import { ethers } from 'ethers';
-import { erc20ABI } from '../artifacts/abi';
+import { characterABI } from '../artifacts/abi';
 import config from '../artifacts/config';
 
 const useTotalCharacterMinted = () => {
@@ -14,7 +14,7 @@ const useTotalCharacterMinted = () => {
     }
 
     console.log('Fetching Character Total Supply');
-    const readOnlyContract = new ethers.Contract(config.characterAddress, erc20ABI, auth.provider);
+    const readOnlyContract = new ethers.Contract(config.characterAddress, characterABI, auth.provider);
     const totalMinted = await readOnlyContract.totalSupply();
     console.log('totalMinted', totalMinted);
 
