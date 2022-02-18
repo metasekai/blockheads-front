@@ -8,6 +8,7 @@ export const premintABI = [
 export const characterABI = [
   'function setApprovalForAll(address operator, bool approved) public virtual override',
   'function isApprovedForAll(address owner, address operator) public view virtual override returns (bool)',
+  'function totalSupply() public view virtual override returns (uint256)',
   'event NewBlockHeadCreated(address indexed owner, uint256 indexed tokenId)',
 ];
 
