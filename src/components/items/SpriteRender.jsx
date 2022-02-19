@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Image } from "@chakra-ui/react";
+import { useEffect, useState, useRef, useCallback } from 'react';
+import { Image as ChakraImage } from '@chakra-ui/react';
 
 import {
   ZombieFemaleWalk,
@@ -10,12 +10,15 @@ import {
   KnightRun,
   CowboyMaleRun,
   CowboyFemaleRun,
-} from "../sprites/Actions";
+} from '../sprites/Actions';
 
 export default function SpriteRender({ item }) {
   const [selected, setSelected] = useState(0);
+  const [sprites, setSprites] = useState([]);
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+  const animationRef = useRef(null);
 
-  useEffect(() => {
+  const animateSprite = useCallback(async () => {
     const interval = setInterval(() => {
       let index = selected + 1;
       if (index >= 10) {
@@ -23,106 +26,72 @@ export default function SpriteRender({ item }) {
       }
 
       setSelected(index);
+      animationRef.current = interval;
     }, 80);
-    return () => clearInterval(interval);
   }, [selected]);
 
-  switch (item.class) {
-    case "knight":
-      return (
-        <Image
-          src={KnightRun[selected]}
-          alt="nft collections"
-          objectFit={"contain"}
-          boxSize="300px"
-          m={8}
-        />
-      );
-    case "robot":
-      return (
-        <Image
-          src={RobotRun[selected]}
-          alt="nft collections"
-          objectFit={"contain"}
-          boxSize="300px"
-          m={8}
-        />
-      );
-    case "cowboy":
-      if (item.type === "female") {
-        return (
-          <Image
-            src={CowboyFemaleRun[selected]}
-            alt="nft collections"
-            objectFit={"contain"}
-            boxSize="300px"
-            m={8}
-          />
-        );
-      } else {
-        return (
-          <Image
-            src={CowboyMaleRun[selected]}
-            alt="nft collections"
-            objectFit={"contain"}
-            boxSize="300px"
-            m={8}
-          />
-        );
+  useEffect(() => {
+    if (sprites.length === 0) {
+      switch (item.class) {
+        case 'knight':
+          setSprites(KnightRun);
+          break;
+        case 'robot':
+          setSprites(RobotRun);
+          break;
+        case 'cowboy':
+          if (item.type === 'female') {
+            setSprites(CowboyFemaleRun);
+          } else {
+            setSprites(CowboyMaleRun);
+          }
+          break;
+        case 'zombie':
+          if (item.type === 'female') {
+            setSprites(ZombieFemaleWalk);
+          } else {
+            setSprites(ZombieMaleWalk);
+          }
+          break;
+        case 'shinobi':
+          if (item.type === 'female') {
+            setSprites(ShinobiFemaleRun);
+          } else {
+            setSprites(ShinobiMaleRun);
+          }
+          break;
+        default:
+          setSprites(KnightRun);
       }
-    case "zombie":
-      if (item.type === "female") {
-        return (
-          <Image
-            src={ZombieFemaleWalk[selected]}
-            alt="nft collections"
-            objectFit={"contain"}
-            boxSize="300px"
-            m={8}
-          />
-        );
-      } else {
-        return (
-          <Image
-            src={ZombieMaleWalk[selected]}
-            alt="nft collections"
-            objectFit={"contain"}
-            boxSize="300px"
-            m={8}
-          />
-        );
+    }
+  }, [item.class, item.type, selected, sprites.length]);
+
+  useEffect(() => {
+    if (sprites.length > 0) {
+      if (assetsLoaded === false) {
+        console.log('preload assets');
+        // Preload the images
+        sprites.forEach(sprite => {
+          const img = new Image();
+          img.src = sprite.src;
+        });
+
+        setAssetsLoaded(true);
       }
-    case "shinobi":
-      if (item.type === "female") {
-        return (
-          <Image
-            src={ShinobiFemaleRun[selected]}
-            alt="nft collections"
-            objectFit={"contain"}
-            boxSize="300px"
-            m={8}
-          />
-        );
-      } else {
-        return (
-          <Image
-            src={ShinobiMaleRun[selected]}
-            alt="nft collections"
-            objectFit={"contain"}
-            boxSize="300px"
-            m={8}
-          />
-        );
-      }
-    default:
-      return (
-        <Image
-          src={KnightRun[selected]}
-          alt="nft collections"
-          objectFit={"contain"}
-          boxSize="300px"
-          m={8}
-        />
-      );
-  }
+    }
+  }, [assetsLoaded, sprites]);
+
+  useEffect(() => {
+    if (assetsLoaded) {
+      // console.log('start animation');
+      animateSprite();
+      return () => clearInterval(animationRef.current);
+    }
+  }, [selected, assetsLoaded, animateSprite]);
+
+  return (
+    { assetsLoaded } && (
+      <ChakraImage src={sprites[selected]} alt="nft collections" objectFit={'contain'} boxSize="300px" m={8} />
+    )
+  );
 }
