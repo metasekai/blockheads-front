@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { ethers } from 'ethers';
 import Web3Modal from 'web3modal';
 
@@ -61,9 +61,15 @@ function AuthProvider({ children }) {
     }
   };
 
-  const connect = async () => {
+  const connect = useCallback(async () => {
+    if (connected) {
+      return;
+    }
+
     // Check the current metamask chainId
-    const chainId = await window.ethereum.send('eth_chainId');
+    const chainId = await window.ethereum.request({
+      method: 'eth_chainId',
+    });
     console.log('chainId', chainId);
 
     if (chainId.result !== '0x13881') {
@@ -79,19 +85,18 @@ function AuthProvider({ children }) {
     const _signer = _provider.getSigner();
     const _address = await _signer.getAddress();
 
-    // console.log(`Signer`, _signer);
-
-    // We can use this to verify sessions and signatures
-    const signedMessage = await signMessage('Hello World', _signer);
-    console.log(`Signed message: ${signedMessage}`);
-
     setProvider(_provider);
     setSigner(_signer);
     setAddress(_address);
     setConnected(true);
-  };
 
-  const disconnect = () => {
+    // We can use this to verify sessions and signatures
+    const signedMessage = await signMessage('Hello World', _signer);
+    console.log(`Signed message: ${signedMessage}`);
+    console.log('connection status', connected);
+  }, [connected]);
+
+  const disconnect = useCallback(async () => {
     setProvider(null);
     setSigner(null);
     setAddress(null);
@@ -99,11 +104,17 @@ function AuthProvider({ children }) {
 
     // clear cache
     web3modal.clearCachedProvider();
-  };
+  }, []);
 
   const getShortenedAddress = () => {
     return address.substring(0, 6) + '...' + address.substring(address.length - 4);
   };
+
+  React.useEffect(() => {
+    if (!connected) {
+      connect();
+    }
+  }, [connected, connect]);
 
   React.useEffect(() => {
     if (!provider) {

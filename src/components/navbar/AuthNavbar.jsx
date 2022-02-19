@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 // Chakra imports
 import { Button, Flex, HStack, Box, Text, Image, useColorModeValue } from '@chakra-ui/react';
@@ -100,9 +100,9 @@ export default function AuthNavbar(props) {
     </HStack>
   );
 
-  const handleAuth = async () => {
+  const handleAuth = useCallback(async () => {
     await auth.connect();
-  };
+  }, [auth]);
 
   return (
     <Flex
