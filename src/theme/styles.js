@@ -1,19 +1,19 @@
-import { mode } from "@chakra-ui/theme-tools";
+import { mode } from '@chakra-ui/theme-tools';
 
 export const globalStyles = {
   colors: {
     gray: {
-      700: "#1f2733",
+      700: '#1f2733',
     },
   },
   styles: {
-    global: (props) => ({
+    global: props => ({
       body: {
-        bg: mode("gray.50", "gray.800")(props),
-        fontFamily: "Helvetica, sans-serif",
+        bg: mode('gray.50', 'gray.800')(props),
+        fontFamily: 'Helvetica, sans-serif',
       },
       html: {
-        fontFamily: "Helvetica, sans-serif",
+        fontFamily: 'Helvetica, sans-serif',
       },
     }),
   },
