@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { Image as ChakraImage } from '@chakra-ui/react';
-import { useAnimation } from 'framer-motion';
+// import { useAnimation } from 'framer-motion';
 
 import {
   ZombieFemaleWalk,
