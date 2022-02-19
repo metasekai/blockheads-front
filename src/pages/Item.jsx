@@ -41,7 +41,7 @@ export default function ItemDetails() {
   const handleSell = () => {
     onOpen();
   };
-  console.log('ItemDetails', item);
+  // console.log('ItemDetails', item);
 
   return (
     <>
