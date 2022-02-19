@@ -90,10 +90,16 @@ function AuthProvider({ children }) {
     setAddress(_address);
     setConnected(true);
 
-    // We can use this to verify sessions and signatures
-    const signedMessage = await signMessage('Hello World', _signer);
-    console.log(`Signed message: ${signedMessage}`);
-    console.log('connection status', connected);
+    // check localstorage if user is not yet loggedin
+    const sessionKey = localStorage.getItem('sessionKey');
+    if (!sessionKey) {
+      // We can use this to verify sessions and signatures
+      const signedMessage = await signMessage('Hello World', _signer);
+      localStorage.setItem('sessionKey', signedMessage);
+
+      console.log(`Signed message: ${signedMessage}`);
+      console.log('connection status', connected);
+    }
   }, [connected]);
 
   const disconnect = useCallback(async () => {
