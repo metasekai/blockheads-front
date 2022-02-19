@@ -10,6 +10,15 @@ import theme from './theme/theme';
 
 import './index.css';
 
+// get localstorage colorMode
+/**
+ * Fix to make sure darkMode is the default
+ */
+const colorMode = localStorage.getItem('chakra-ui-color-mode');
+if (!colorMode) {
+  localStorage.setItem('chakra-ui-color-mode', 'dark');
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
