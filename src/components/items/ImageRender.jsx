@@ -36,7 +36,7 @@ export default function ImageRender({ item }) {
         />
       );
     case 'cowboy':
-      if (item.type === 'female') {
+      if (item.type.toLowerCase() === 'female') {
         return (
           <Image
             src={CowboyFemale}
@@ -62,7 +62,7 @@ export default function ImageRender({ item }) {
         );
       }
     case 'zombie':
-      if (item.type === 'female') {
+      if (item.type.toLowerCase() === 'female') {
         return (
           <Image
             src={ZombieFemale}
@@ -88,7 +88,7 @@ export default function ImageRender({ item }) {
         );
       }
     case 'shinobi':
-      if (item.type === 'female') {
+      if (item.type.toLowerCase() === 'female') {
         return (
           <Image
             src={ShinobiFemale}
