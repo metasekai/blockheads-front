@@ -12,6 +12,10 @@ const GET_CHARACTERS_BY_TOKENIDS = gql`
       class
       stats {
         vitality
+        strength
+        defense
+        morale
+        agility
       }
     }
   }

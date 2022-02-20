@@ -11,21 +11,21 @@ const GET_CHARACTER_BY_TOKENID = gql`
       class
       stats {
         vitality
+        strength
+        defense
+        morale
+        agility
       }
     }
   }
 `;
 
 const useGetNFTInformation = tokenId => {
-  const { data, loading } = useQuery(GET_CHARACTER_BY_TOKENID, {
+  return useQuery(GET_CHARACTER_BY_TOKENID, {
     variables: {
       tokenId: parseInt(tokenId, 10),
     },
   });
-
-  console.log('useGetNFTInformation', data);
-
-  return { loading, character: data && data.characters };
 };
 
 export default useGetNFTInformation;

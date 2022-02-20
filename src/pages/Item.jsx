@@ -37,7 +37,7 @@ export default function ItemDetails() {
   const skillName = useColorModeValue('gray.700', 'gray.500');
   const skillDescription = useColorModeValue('gray.500', 'gray.300');
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { character, loading } = useGetNFTInformation(id);
+  const { data, loading } = useGetNFTInformation(id);
 
   // const item = itemsData.find(item => item.id === parseInt(id, 10));
 
@@ -50,7 +50,7 @@ export default function ItemDetails() {
     return <Text>Loading...</Text>;
   }
 
-  const item = { ...character[0], skills: itemsData[0].skills };
+  const item = { ...data.characters[0], skills: itemsData[0].skills };
   console.log('item', item);
 
   return (

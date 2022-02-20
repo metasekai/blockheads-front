@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   Modal,
   ModalOverlay,
@@ -14,21 +14,26 @@ import {
   GridItem,
   Image,
   Box,
-} from "@chakra-ui/react";
+  Spinner,
+} from '@chakra-ui/react';
 
-import Health from "../../assets/img/health.png";
-import Strength from "../../assets/img/strength.png";
-import Shield from "../../assets/img/shield.png";
-import Morale from "../../assets/img/morale.png";
-import Speed from "../../assets/img/speed.png";
-import Classes from "../badge/Classes";
-import Type from "../badge/Type";
-import Rarity, { GetRarity } from "../badge/Rarity";
-import SpriteRender from "../items/SpriteRender";
+import Health from '../../assets/img/health.png';
+import Strength from '../../assets/img/strength.png';
+import Shield from '../../assets/img/shield.png';
+import Morale from '../../assets/img/morale.png';
+import Speed from '../../assets/img/speed.png';
+import Classes from '../badge/Classes';
+import Type from '../badge/Type';
+import Rarity, { GetRarity } from '../badge/Rarity';
+import SpriteRender from '../items/SpriteRender';
 
 function MintSuccess(props) {
   const { isOpen, onClose, item } = props;
   const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    console.log('item', item);
+  }, [item]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,6 +47,34 @@ function MintSuccess(props) {
     return () => clearInterval(interval);
   }, [selected]);
 
+  if (!item) {
+    return (
+      <>
+        <Modal onClose={onClose} isOpen={isOpen} isCentered size="2xl">
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader></ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Flex flexDirection={{ sm: 'column', lg: 'row' }} w="100%">
+                <Flex
+                  align="center"
+                  justify="center"
+                  borderRadius="15px"
+                  width={{ lg: '100%' }}
+                  minHeight={{ sm: '250px' }}
+                >
+                  <Spinner />
+                </Flex>
+              </Flex>
+            </ModalBody>
+            <ModalFooter></ModalFooter>
+          </ModalContent>
+        </Modal>
+      </>
+    );
+  }
+
   return (
     <>
       <Modal onClose={onClose} isOpen={isOpen} isCentered size="2xl">
@@ -50,44 +83,28 @@ function MintSuccess(props) {
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Flex flexDirection={{ sm: "column", lg: "row" }} w="100%">
+            <Flex flexDirection={{ sm: 'column', lg: 'row' }} w="100%">
               <Flex
-                bgGradient={GetRarity(item.rarity)}
+                bgGradient={GetRarity(item.rarity.toLowerCase())}
                 align="center"
                 justify="center"
                 borderRadius="15px"
-                width={{ lg: "40%" }}
-                minHeight={{ sm: "250px" }}
+                width={{ lg: '40%' }}
+                minHeight={{ sm: '250px' }}
               >
                 <SpriteRender item={item} />
               </Flex>
               <Spacer />
 
-              <Flex
-                flexDirection="column"
-                h="100%"
-                lineHeight="1.6"
-                width={{ lg: "55%" }}
-              >
+              <Flex flexDirection="column" h="100%" lineHeight="1.6" width={{ lg: '55%' }}>
                 <Text fontSize="xl" fontWeight="bold">
                   Congratulations!
                 </Text>
                 <Text fontSize="md" color="gray.400" fontWeight="bold">
-                  You have minted a{" "}
-                  <span style={{ textTransform: "uppercase" }}>
-                    {item.class}
-                  </span>
-                  !
+                  You have minted a <span style={{ textTransform: 'uppercase' }}>{item.class.toLowerCase()}</span>!
                 </Text>
 
-                <Box
-                  mt={2}
-                  p={3}
-                  shadow="md"
-                  borderWidth="1px"
-                  flex="1"
-                  borderRadius="md"
-                >
+                <Box mt={2} p={3} shadow="md" borderWidth="1px" flex="1" borderRadius="md">
                   <Text fontSize="lg" color="gray.400" fontWeight="bold">
                     ABOUT
                   </Text>
@@ -97,7 +114,7 @@ function MintSuccess(props) {
                         ID
                       </Text>
                       <Text fontSize="md" fontWeight="bold">
-                        #{item.id}
+                        #{item.tokenId}
                       </Text>
                     </GridItem>
 
@@ -105,7 +122,7 @@ function MintSuccess(props) {
                       <Text fontSize="md" color="gray.400" fontWeight="bold">
                         CLASS
                       </Text>
-                      <Classes name={item.class} />
+                      <Classes name={item.class.toLowerCase()} />
                     </GridItem>
                   </Grid>
                   <Grid templateColumns="repeat(2, 1fr)" gap={6}>
@@ -113,26 +130,19 @@ function MintSuccess(props) {
                       <Text fontSize="md" color="gray.400" fontWeight="bold">
                         TYPE
                       </Text>
-                      <Type name={item.type} />
+                      <Type name={item.type.toLowerCase()} />
                     </GridItem>
 
                     <GridItem flexDirection="column" align="flex-start">
                       <Text fontSize="md" color="gray.400" fontWeight="bold">
                         RARITY
                       </Text>
-                      <Rarity name={item.rarity} />
+                      <Rarity name={item.rarity.toLowerCase()} />
                     </GridItem>
                   </Grid>
                 </Box>
 
-                <Box
-                  mt={2}
-                  p={3}
-                  shadow="md"
-                  borderWidth="1px"
-                  flex="1"
-                  borderRadius="md"
-                >
+                <Box mt={2} p={3} shadow="md" borderWidth="1px" flex="1" borderRadius="md">
                   <Text fontSize="lg" color="gray.400" fontWeight="bold">
                     STATS
                   </Text>
@@ -142,14 +152,9 @@ function MintSuccess(props) {
                         Vitality
                       </Text>
                       <Flex flexDirection="row">
-                        <Image
-                          src={Health}
-                          alt="hp icon"
-                          objectFit={"contain"}
-                          boxSize="30px"
-                        />
+                        <Image src={Health} alt="hp icon" objectFit={'contain'} boxSize="30px" />
                         <Text fontSize="md" fontWeight="bold" ml={1}>
-                          {item.vitality}
+                          {item.stats.vitality}
                         </Text>
                       </Flex>
                     </GridItem>
@@ -159,14 +164,9 @@ function MintSuccess(props) {
                         Strength
                       </Text>
                       <Flex flexDirection="row">
-                        <Image
-                          src={Strength}
-                          alt="hp icon"
-                          objectFit={"contain"}
-                          boxSize="30px"
-                        />
+                        <Image src={Strength} alt="hp icon" objectFit={'contain'} boxSize="30px" />
                         <Text fontSize="md" fontWeight="bold" ml={1}>
-                          {item.strength}
+                          {item.stats.strength}
                         </Text>
                       </Flex>
                     </GridItem>
@@ -176,14 +176,9 @@ function MintSuccess(props) {
                       </Text>
 
                       <Flex flexDirection="row">
-                        <Image
-                          src={Shield}
-                          alt="hp icon"
-                          objectFit={"contain"}
-                          boxSize="30px"
-                        />
+                        <Image src={Shield} alt="hp icon" objectFit={'contain'} boxSize="30px" />
                         <Text fontSize="md" fontWeight="bold" ml={1}>
-                          {item.defense}
+                          {item.stats.defense}
                         </Text>
                       </Flex>
                     </GridItem>
@@ -194,14 +189,9 @@ function MintSuccess(props) {
                         Morale
                       </Text>
                       <Flex flexDirection="row">
-                        <Image
-                          src={Morale}
-                          alt="hp icon"
-                          objectFit={"contain"}
-                          boxSize="30px"
-                        />
+                        <Image src={Morale} alt="hp icon" objectFit={'contain'} boxSize="30px" />
                         <Text fontSize="md" fontWeight="bold" ml={1}>
-                          {item.morale}
+                          {item.stats.morale}
                         </Text>
                       </Flex>
                     </GridItem>
@@ -211,14 +201,9 @@ function MintSuccess(props) {
                         Agility
                       </Text>
                       <Flex flexDirection="row">
-                        <Image
-                          src={Speed}
-                          alt="hp icon"
-                          objectFit={"contain"}
-                          boxSize="30px"
-                        />
+                        <Image src={Speed} alt="hp icon" objectFit={'contain'} boxSize="30px" />
                         <Text fontSize="md" fontWeight="bold" ml={1}>
-                          {item.agility}
+                          {item.stats.agility}
                         </Text>
                       </Flex>
                     </GridItem>

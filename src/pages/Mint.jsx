@@ -17,20 +17,52 @@ import config from '../artifacts/config';
 import ErrorMessages from '../utils/errors';
 
 const minted = {
-  id: 1215,
+  tokenId: 1215,
   sprite: 'knight',
   class: 'knight',
   type: 'male',
   rarity: 'legend',
-  vitality: 43,
-  strength: 44,
-  defense: 41,
-  morale: 36,
-  agility: 22,
+  stats: {
+    vitality: 43,
+    strength: 44,
+    defense: 41,
+    morale: 36,
+    agility: 22,
+  },
 };
 
-function Mint() {
+function RotatingImage() {
   const [selected, setSelected] = useState(0);
+  const nfts = [ZombieMale, CowboyFemale, CowboyMale, Knight, Robot, ShinobiFemale, ShinobiMale, ZombieFemale];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      let index = selected + 1;
+      if (index >= 8) {
+        index = 0;
+      }
+
+      setSelected(index);
+    }, 600);
+    return () => clearInterval(interval);
+  }, [selected]);
+
+  return (
+    <Image
+      src={nfts[selected]}
+      alt="nft collections"
+      borderRadius="full"
+      objectFit={'cover'}
+      objectPosition="top"
+      boxSize="200px"
+      w="220px"
+      mb={8}
+    />
+  );
+}
+const RotatingImageMemo = React.memo(RotatingImage);
+
+function Mint() {
   const [loading, setLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const textColor = useColorModeValue('gray.700', 'white');
@@ -39,8 +71,6 @@ function Mint() {
   const toast = useToast();
   const checkAllowance = useApprove(config.daiAddress);
   const minter = useMintCharacter();
-
-  const nfts = [ZombieMale, CowboyFemale, CowboyMale, Knight, Robot, ShinobiFemale, ShinobiMale, ZombieFemale];
 
   const handleOnApprove = async () => {
     console.log('handleOnApprove', checkAllowance.approved);
@@ -72,18 +102,6 @@ function Mint() {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      let index = selected + 1;
-      if (index >= 8) {
-        index = 0;
-      }
-
-      setSelected(index);
-    }, 600);
-    return () => clearInterval(interval);
-  }, [selected]);
-
-  useEffect(() => {
     const err = minter.error;
     if (err) {
       toast({
@@ -95,7 +113,11 @@ function Mint() {
         isClosable: true,
       });
     }
-  }, [minter.error]);
+  }, [minter.error, toast]);
+
+  useEffect(() => {
+    console.log('character from graphql', minter.characters);
+  }, [minter.characters]);
 
   return (
     <>
@@ -119,16 +141,7 @@ function Mint() {
         ></Box>
 
         <Flex alignItems="center" justifyContent="center" mb="60px" mt="6.5rem" flexDir={'column'}>
-          <Image
-            src={nfts[selected]}
-            alt="nft collections"
-            borderRadius="full"
-            objectFit={'cover'}
-            objectPosition="top"
-            boxSize="200px"
-            w="220px"
-            mb={8}
-          />
+          <RotatingImageMemo />
           <Flex
             direction="column"
             w="445px"
@@ -201,7 +214,7 @@ function Mint() {
           </Flex>
         </Flex>
       </Flex>
-      <MintSuccess isOpen={isOpen} onClose={onClose} item={minted} />
+      <MintSuccess isOpen={isOpen} onClose={onClose} item={minter.characters ? minter.characters[0] : null} />
     </>
   );
 }

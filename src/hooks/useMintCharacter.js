@@ -4,6 +4,7 @@ import { useAuth } from '../providers/AuthProvider';
 import { ethers } from 'ethers';
 import { premintABI } from '../artifacts/abi';
 import config from '../artifacts/config';
+import useGetNFTInformation from './useGetNFTInformation';
 
 const NewCharacterMintedTopic = '0x7a24f227bd6b4e20d868408f3e66df824206e3ed7993a2261bd3ff4743d39da0';
 
@@ -26,7 +27,9 @@ const findTopicFromReceipt = receipt => {
 
 const useMintCharacter = () => {
   const [error, setError] = useState(null);
+  const [tokenId, setTokenId] = useState(null);
   const auth = useAuth();
+  const { data, loading } = useGetNFTInformation(tokenId);
 
   const mintNewCharacter = useCallback(async () => {
     if (!auth.signer) {
@@ -42,7 +45,7 @@ const useMintCharacter = () => {
       console.log(buyTx);
       console.log('receipt', receipt);
       const eventData = findTopicFromReceipt(receipt);
-
+      setTokenId(eventData);
       console.log(eventData);
       setError(null);
       return true;
@@ -54,7 +57,7 @@ const useMintCharacter = () => {
     }
   }, [auth.signer]);
 
-  return { mintNewCharacter, error };
+  return { mintNewCharacter, characters: data ? data.characters : [], loading, error };
 };
 
 export default useMintCharacter;
