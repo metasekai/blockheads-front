@@ -2,14 +2,13 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { DocumentIcon, HomeIcon, PersonIcon, RocketIcon } from '../icons/Icons';
+import { HomeIcon, PersonIcon, RocketIcon } from '../icons/Icons';
 import {
   Box,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   Flex,
-  Link,
   HStack,
   Button,
   Text,
@@ -17,9 +16,11 @@ import {
 } from '@chakra-ui/react';
 
 import AdminNavbarLinks from './AdminNavbarLinks';
+import { useAuth } from '../../providers/AuthProvider';
 
 export default function AdminNavbar(props) {
   const { brandText } = props;
+  const auth = useAuth();
 
   // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
   let navbarIcon = useColorModeValue('gray.700', 'gray.200');
@@ -84,6 +85,7 @@ export default function AdminNavbar(props) {
       </a>
     </HStack>
   );
+
   return (
     <Flex
       position={'absolute'}
@@ -146,7 +148,7 @@ export default function AdminNavbar(props) {
         </Box>
         {linksAuth}
         <Box ms="auto" w={{ sm: '100%', md: 'unset' }}>
-          <AdminNavbarLinks onOpen={props.onOpen} logoText={'BLOCKHEADS'} secondary={props.secondary} />
+          <AdminNavbarLinks auth={auth} onOpen={props.onOpen} logoText={'BLOCKHEADS'} secondary={props.secondary} />
         </Box>
       </Flex>
     </Flex>

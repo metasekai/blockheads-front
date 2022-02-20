@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 
 // Chakra imports
 import { Button, Flex, HStack, Box, Text, Image, useColorModeValue } from '@chakra-ui/react';

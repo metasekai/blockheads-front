@@ -16,21 +16,41 @@ export default function HeaderLinks(props) {
 
   return (
     <Flex pe={{ sm: '0px', md: '16px' }} w={{ sm: '100%', md: 'auto' }} alignItems="center" flexDirection="row">
-      <Button
-        bg={bgButton}
-        color={colorButton}
-        fontSize="sm"
-        variant="no-hover"
-        borderRadius="35px"
-        px="30px"
-        display={{
-          sm: 'none',
-          lg: 'flex',
-        }}
-        mr={2}
-      >
-        Connect Wallet
-      </Button>
+      {props.auth.connected ? (
+        <Button
+          disabled={true}
+          bg={bgButton}
+          color={colorButton}
+          fontSize="sm"
+          variant="no-hover"
+          borderRadius="35px"
+          px="30px"
+          display={{
+            sm: 'none',
+            lg: 'flex',
+          }}
+          mr={2}
+        >
+          {props.auth.getShortenedAddress()}
+        </Button>
+      ) : (
+        <Button
+          onClick={() => props.auth.connect()}
+          bg={bgButton}
+          color={colorButton}
+          fontSize="sm"
+          variant="no-hover"
+          borderRadius="35px"
+          px="30px"
+          display={{
+            sm: 'none',
+            lg: 'flex',
+          }}
+          mr={2}
+        >
+          Connect Wallet
+        </Button>
+      )}
       <SidebarResponsive logoText={props.logoText} secondary={props.secondary} routes={routes} {...rest} />
       <Box onClick={toggleColorMode} _hover={{ cursor: 'pointer' }} ml={1}>
         {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
