@@ -29,15 +29,15 @@ export default function Card(props) {
       }}
       px={2}
       py={4}
-      onClick={() => navigate(`/marketplace/${item.id}`, { id: item.id })}
+      onClick={() => navigate(`/marketplace/${item.tokenId}`, { id: item.tokenId })}
     >
       <Box fontWeight="semibold" letterSpacing={1} isTruncated>
-        #{item.id}
+        #{item.tokenId}
       </Box>
       <Wrap>
-        <Classes name={item.class} />
-        <Type name={item.type} />
-        <Rarity name={item.rarity} />
+        <Classes name={item.class.toLowerCase()} />
+        <Type name={item.type.toLowerCase()} />
+        <Rarity name={item.rarity.toLowerCase()} />
       </Wrap>
       <ImageRender item={item} />
       {priceView && (

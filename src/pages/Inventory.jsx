@@ -11,10 +11,12 @@ import { itemsData } from '../utils/data';
 import useGetOwnNFT from '../hooks/useGetOwnNFT';
 
 export default function Inventory() {
-  const { loading, blockheads } = useGetOwnNFT();
+  const { loadingCharacters, characters, blockheads } = useGetOwnNFT();
   const textColor = useColorModeValue('gray.700', 'white');
 
   const ownItems = itemsData.filter(item => item.owner === true);
+
+  console.log('characters', characters);
 
   return (
     <Flex flexDirection="row" pt={{ base: '120px', md: '75px' }}>
@@ -23,14 +25,15 @@ export default function Inventory() {
           <Card overflowX={{ sm: 'scroll', xl: 'hidden' }}>
             <CardHeader p="6px 0px 22px 0px">
               <Text fontSize="xl" color={textColor} fontWeight="bold">
-                {blockheads.length} Characters
+                {characters ? characters.length : 0} Characters
               </Text>
             </CardHeader>
             <CardBody>
               <Wrap justify="center">
-                {ownItems.map((item, key) => {
-                  return <ItemCard key={key} item={item} priceView={!item.owner} />;
-                })}
+                {characters &&
+                  characters.map((item, key) => {
+                    return <ItemCard key={key} item={item} priceView={!item.owner} />;
+                  })}
               </Wrap>
             </CardBody>
           </Card>

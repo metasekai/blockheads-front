@@ -55,7 +55,7 @@ export default function SpriteRender({ item }) {
 
   useEffect(() => {
     if (sprites.length === 0) {
-      switch (item.class) {
+      switch (item.class.toLowerCase()) {
         case 'knight':
           setSpritesheet(SpriteSheetFactory.knight);
           setSprites(KnightRun);
@@ -65,7 +65,7 @@ export default function SpriteRender({ item }) {
           setSprites(RobotRun);
           break;
         case 'cowboy':
-          if (item.type === 'female') {
+          if (item.type.toLowerCase() === 'female') {
             setSpritesheet(SpriteSheetFactory.cowboyFemale);
             setSprites(CowboyFemaleRun);
           } else {
@@ -74,7 +74,7 @@ export default function SpriteRender({ item }) {
           }
           break;
         case 'zombie':
-          if (item.type === 'female') {
+          if (item.type.toLowerCase() === 'female') {
             setSpritesheet(SpriteSheetFactory.zombieFemale);
             setSprites(ZombieFemaleWalk);
           } else {
@@ -83,7 +83,7 @@ export default function SpriteRender({ item }) {
           }
           break;
         case 'shinobi':
-          if (item.type === 'female') {
+          if (item.type.toLowerCase() === 'female') {
             setSpritesheet(SpriteSheetFactory.shinobiFemale);
             setSprites(ShinobiFemaleRun);
           } else {

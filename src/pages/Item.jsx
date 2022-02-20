@@ -27,21 +27,31 @@ import Rarity, { GetRarity } from '../components/badge/Rarity';
 import SpriteRender from '../components/items/SpriteRender';
 import SellForm from '../components/modal/SellForm';
 import { itemsData } from '../utils/data';
+import useGetNFTInformation from '../hooks/useGetNFTInformation';
 
 export default function ItemDetails() {
   let { id } = useParams();
+  console.log('tokenId', id);
   const cardBg = useColorModeValue('white', 'gray.700');
   const cardBorder = useColorModeValue('gray.200', 'gray.600');
   const skillName = useColorModeValue('gray.700', 'gray.500');
   const skillDescription = useColorModeValue('gray.500', 'gray.300');
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { character, loading } = useGetNFTInformation(id);
 
-  const item = itemsData.find(item => item.id === parseInt(id, 10));
+  // const item = itemsData.find(item => item.id === parseInt(id, 10));
 
   const handleSell = () => {
     onOpen();
   };
   // console.log('ItemDetails', item);
+
+  if (loading) {
+    return <Text>Loading...</Text>;
+  }
+
+  const item = { ...character[0], skills: itemsData[0].skills };
+  console.log('item', item);
 
   return (
     <>

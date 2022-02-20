@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import { AuthProvider } from './providers/AuthProvider';
 import App from './App';
@@ -19,13 +20,21 @@ if (!colorMode) {
   localStorage.setItem('chakra-ui-color-mode', 'dark');
 }
 
+// ApolloClient
+const client = new ApolloClient({
+  uri: 'https://blockend.metasekai.xyz/v1/graphql',
+  cache: new InMemoryCache(),
+});
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ChakraProvider theme={theme} resetCSS>
-        <AuthProvider>
-          <App />
-        </AuthProvider>
+        <ApolloProvider client={client}>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </ApolloProvider>
       </ChakraProvider>
     </BrowserRouter>
   </React.StrictMode>,
