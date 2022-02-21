@@ -1,33 +1,38 @@
 import { lazy } from 'react';
 
+const Mint = lazy(() => import('./pages/Mint'));
+const Marketplace = lazy(() => import('./pages/Marketplace'));
+const Item = lazy(() => import('./pages/Item'));
+const Inventory = lazy(() => import('./pages/Inventory'));
+
 var routes = [
   {
     path: '/marketplace',
     name: 'Marketplace',
     layout: 'dashboard',
     showResponsive: true,
-    element: lazy(() => import('./pages/Marketplace')),
+    element: <Marketplace />,
   },
   {
     path: '/marketplace/:id',
     name: 'Item Details',
     layout: 'dashboard',
     showResponsive: false,
-    element: lazy(() => import('./pages/Item')),
+    element: <Item />,
   },
   {
     path: '/inventory',
     name: 'Inventory',
     layout: 'dashboard',
     showResponsive: true,
-    element: lazy(() => import('./pages/Inventory')),
+    element: <Inventory />,
   },
   {
     path: '/mint',
     name: 'Mint',
     layout: 'simple',
     showResponsive: true,
-    element: lazy(() => import('./pages/Mint')),
+    element: <Mint />,
   },
   {
     path: '/',
@@ -35,7 +40,7 @@ var routes = [
     exact: true,
     layout: 'simple',
     showResponsive: false,
-    element: lazy(() => import('./pages/Mint')),
+    element: <Mint />,
   },
 ];
 

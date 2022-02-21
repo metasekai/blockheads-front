@@ -3,13 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 
 const Main = props => {
   return (
-    <Routes>
-      <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
         {props.routes.map(route => {
           return <Route key={route.path} path={route.path} element={route.element} />;
         })}
-      </Suspense>
-    </Routes>
+      </Routes>
+    </Suspense>
   );
 };
 export default Main;
