@@ -6,28 +6,28 @@ var routes = [
     name: 'Marketplace',
     layout: 'dashboard',
     showResponsive: true,
-    element: () => lazy(() => import('./pages/Marketplace')),
+    element: lazy(() => import('./pages/Marketplace')),
   },
   {
     path: '/marketplace/:id',
     name: 'Item Details',
     layout: 'dashboard',
     showResponsive: false,
-    element: () => lazy(() => import('./pages/Item')),
+    element: lazy(() => import('./pages/Item')),
   },
   {
     path: '/inventory',
     name: 'Inventory',
     layout: 'dashboard',
     showResponsive: true,
-    element: () => lazy(() => import('./pages/Inventory')),
+    element: lazy(() => import('./pages/Inventory')),
   },
   {
     path: '/mint',
     name: 'Mint',
     layout: 'simple',
     showResponsive: true,
-    element: () => lazy(() => import('./pages/Mint')),
+    element: lazy(() => import('./pages/Mint')),
   },
   {
     path: '/',
@@ -35,7 +35,7 @@ var routes = [
     exact: true,
     layout: 'simple',
     showResponsive: false,
-    element: () => lazy(() => import('./pages/Mint')),
+    element: lazy(() => import('./pages/Mint')),
   },
 ];
 
