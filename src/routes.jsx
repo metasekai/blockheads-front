@@ -1,7 +1,4 @@
-import Mint from './pages/Mint';
-import Inventory from './pages/Inventory';
-import Marketplace from './pages/Marketplace';
-import ItemDetails from './pages/Item';
+import { lazy } from 'react';
 
 var routes = [
   {
@@ -9,28 +6,28 @@ var routes = [
     name: 'Marketplace',
     layout: 'dashboard',
     showResponsive: true,
-    element: <Marketplace />,
+    element: () => lazy(() => import('./pages/Marketplace')),
   },
   {
     path: '/marketplace/:id',
     name: 'Item Details',
     layout: 'dashboard',
     showResponsive: false,
-    element: <ItemDetails />,
+    element: () => lazy(() => import('./pages/Item')),
   },
   {
     path: '/inventory',
     name: 'Inventory',
     layout: 'dashboard',
     showResponsive: true,
-    element: <Inventory />,
+    element: () => lazy(() => import('./pages/Inventory')),
   },
   {
     path: '/mint',
     name: 'Mint',
     layout: 'simple',
     showResponsive: true,
-    element: <Mint />,
+    element: () => lazy(() => import('./pages/Mint')),
   },
   {
     path: '/',
@@ -38,7 +35,7 @@ var routes = [
     exact: true,
     layout: 'simple',
     showResponsive: false,
-    element: <Mint />,
+    element: () => lazy(() => import('./pages/Mint')),
   },
 ];
 
