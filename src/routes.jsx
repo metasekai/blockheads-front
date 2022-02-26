@@ -4,6 +4,8 @@ const Mint = lazy(() => import('./pages/Mint'));
 const Marketplace = lazy(() => import('./pages/Marketplace'));
 const Item = lazy(() => import('./pages/Item'));
 const Inventory = lazy(() => import('./pages/Inventory'));
+const Login = lazy(() => import('./pages/Login'));
+const Profile = lazy(() => import('./pages/Profile'));
 
 var routes = [
   {
@@ -35,12 +37,19 @@ var routes = [
     element: <Mint />,
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    layout: 'dashboard',
+    showResponsive: true,
+    element: <Profile />,
+  },
+  {
     path: '/',
-    name: 'Mint',
+    name: 'Login',
     exact: true,
     layout: 'simple',
     showResponsive: false,
-    element: <Mint />,
+    element: <Login />,
   },
 ];
 
