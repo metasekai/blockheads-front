@@ -1,16 +1,18 @@
-import Health from "../assets/img/health.png";
-import Strength from "../assets/img/strength.png";
-import Shield from "../assets/img/shield.png";
-import Morale from "../assets/img/morale.png";
-import Speed from "../assets/img/speed.png";
+import Health from '../assets/img/health.png';
+import Strength from '../assets/img/strength.png';
+import Shield from '../assets/img/shield.png';
+import Morale from '../assets/img/morale.png';
+import Speed from '../assets/img/speed.png';
+
+import { FaCreditCard, FaRocket, FaGift, FaShoppingBasket } from 'react-icons/fa';
 
 export const itemsData = [
   {
     id: 1102,
-    sprite: "knight",
-    class: "knight",
-    type: "male",
-    rarity: "epic",
+    sprite: 'knight',
+    class: 'knight',
+    type: 'male',
+    rarity: 'epic',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -22,39 +24,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1033,
-    sprite: "zombie",
-    class: "zombie",
-    type: "male",
-    rarity: "legend",
+    sprite: 'zombie',
+    class: 'zombie',
+    type: 'male',
+    rarity: 'legend',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -66,39 +67,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1204,
-    sprite: "cowboy",
-    class: "cowboy",
-    type: "male",
-    rarity: "epic",
+    sprite: 'cowboy',
+    class: 'cowboy',
+    type: 'male',
+    rarity: 'epic',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -110,39 +110,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1205,
-    sprite: "zombie",
-    class: "zombie",
-    type: "male",
-    rarity: "common",
+    sprite: 'zombie',
+    class: 'zombie',
+    type: 'male',
+    rarity: 'common',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -154,39 +153,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1208,
-    sprite: "shinobi",
-    class: "shinobi",
-    type: "male",
-    rarity: "rare",
+    sprite: 'shinobi',
+    class: 'shinobi',
+    type: 'male',
+    rarity: 'rare',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -198,39 +196,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1209,
-    sprite: "robot",
-    class: "robot",
-    type: "neutral",
-    rarity: "common",
+    sprite: 'robot',
+    class: 'robot',
+    type: 'neutral',
+    rarity: 'common',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -242,39 +239,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1210,
-    sprite: "knight",
-    class: "knight",
-    type: "male",
-    rarity: "legend",
+    sprite: 'knight',
+    class: 'knight',
+    type: 'male',
+    rarity: 'legend',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -286,39 +282,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1211,
-    sprite: "cowboy",
-    class: "cowboy",
-    type: "female",
-    rarity: "common",
+    sprite: 'cowboy',
+    class: 'cowboy',
+    type: 'female',
+    rarity: 'common',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -330,39 +325,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1212,
-    sprite: "zombie",
-    class: "zombie",
-    type: "female",
-    rarity: "epic",
+    sprite: 'zombie',
+    class: 'zombie',
+    type: 'female',
+    rarity: 'epic',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -374,39 +368,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1213,
-    sprite: "shinobi",
-    class: "shinobi",
-    type: "female",
-    rarity: "epic",
+    sprite: 'shinobi',
+    class: 'shinobi',
+    type: 'female',
+    rarity: 'epic',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -418,39 +411,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1215,
-    sprite: "knight",
-    class: "knight",
-    type: "male",
-    rarity: "legend",
+    sprite: 'knight',
+    class: 'knight',
+    type: 'male',
+    rarity: 'legend',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -462,39 +454,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1216,
-    sprite: "cowboy",
-    class: "cowboy",
-    type: "female",
-    rarity: "common",
+    sprite: 'cowboy',
+    class: 'cowboy',
+    type: 'female',
+    rarity: 'common',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -506,39 +497,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1218,
-    sprite: "zombie",
-    class: "zombie",
-    type: "female",
-    rarity: "epic",
+    sprite: 'zombie',
+    class: 'zombie',
+    type: 'female',
+    rarity: 'epic',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -550,39 +540,38 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
   {
     id: 1219,
-    sprite: "shinobi",
-    class: "shinobi",
-    type: "female",
-    rarity: "epic",
+    sprite: 'shinobi',
+    class: 'shinobi',
+    type: 'female',
+    rarity: 'epic',
     vitality: 43,
     strength: 44,
     defense: 41,
@@ -594,35 +583,67 @@ export const itemsData = [
       {
         id: 1,
         icon: Strength,
-        name: "Netflix",
+        name: 'Netflix',
         description:
-          "Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.",
+          'Healer crafts a potion of poison. Throwing it in the dragon’s mouth causes damage, which can be blocked by defense.',
       },
       {
         id: 2,
         icon: Shield,
-        name: "Spotify",
-        description:
-          "Hammer rushes to one Hero and protects them from enemy’s incoming attacks.",
+        name: 'Spotify',
+        description: 'Hammer rushes to one Hero and protects them from enemy’s incoming attacks.',
       },
       {
         id: 3,
         icon: Health,
-        name: "Youtube",
+        name: 'Youtube',
         description:
-          "Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.",
+          'Mage strikes the dragon with a flash of lightning and drains their health. Causes major damage and heals an ally.',
       },
       {
         id: 4,
         icon: Speed,
-        name: "Facebook",
+        name: 'Facebook',
         description:
-          "Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.",
+          'Knight lunges at the dragon with their sword. Causes physical damage that may be blocked by dragon’s defense.',
       },
     ],
   },
 ];
 
-export const classData = ["cowboy", "knight", "robot", "shinobi", "zombie"];
-export const typesData = ["male", "female", "neutral"];
-export const rarityData = ["common", "rare", "epic", "legend"];
+export const classData = ['cowboy', 'knight', 'robot', 'shinobi', 'zombie'];
+export const typesData = ['male', 'female', 'neutral'];
+export const rarityData = ['common', 'rare', 'epic', 'legend'];
+
+export const timelineData = [
+  {
+    logo: FaGift,
+    title: 'Gifted character to 0x222...333',
+    date: '22 FEB 7:20 PM',
+    color: 'pink.200',
+  },
+  {
+    logo: FaRocket,
+    title: 'Minted character',
+    date: '21 FEB 11:21 PM',
+    color: 'blue.200',
+  },
+  {
+    logo: FaShoppingBasket,
+    title: 'Sold character to marketplace',
+    date: '21 FEB 9:28 PM',
+    color: 'purple.200',
+  },
+  {
+    logo: FaRocket,
+    title: 'Minted character',
+    date: '20 FEB 3:52 PM',
+    color: 'blue.200',
+  },
+  {
+    logo: FaCreditCard,
+    title: 'Bought character from marketplace',
+    date: '19 FEB 11:35 PM',
+    color: 'green.200',
+  },
+];
