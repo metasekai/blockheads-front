@@ -172,7 +172,7 @@ function Mint() {
                 isLoading={loading}
                 loadingText="Submitting"
                 type="submit"
-                bg="teal.300"
+                bg="blue.300"
                 fontSize="sm"
                 color="white"
                 fontWeight="bold"
@@ -180,10 +180,10 @@ function Mint() {
                 h="45"
                 mb="24px"
                 _hover={{
-                  bg: 'teal.200',
+                  bg: 'blue.200',
                 }}
                 _active={{
-                  bg: 'teal.400',
+                  bg: 'blue.400',
                 }}
               >
                 APPROVE
@@ -194,7 +194,7 @@ function Mint() {
                 isLoading={loading}
                 loadingText="Submitting"
                 type="submit"
-                bg="teal.300"
+                bg="blue.300"
                 fontSize="sm"
                 color="white"
                 fontWeight="bold"
@@ -202,10 +202,10 @@ function Mint() {
                 h="45"
                 mb="24px"
                 _hover={{
-                  bg: 'teal.200',
+                  bg: 'blue.200',
                 }}
                 _active={{
-                  bg: 'teal.400',
+                  bg: 'blue.400',
                 }}
               >
                 MINT Character
