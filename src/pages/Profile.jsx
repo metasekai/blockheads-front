@@ -65,7 +65,8 @@ function Profile() {
       <EmailPassForm isOpen={isOpen} onClose={onClose} />
       <ChangeNickname isOpen={openNick} onClose={onCloseNick} />
       <Box
-        mb={{ sm: '205px', md: '75px', xl: '70px' }}
+        mb={{ sm: '95px', md: '75px', xl: '70px' }}
+        mt={{ sm: '-10px', md: '-10px' }}
         borderRadius="15px"
         px="0px"
         display="flex"
@@ -86,12 +87,12 @@ function Profile() {
         >
           <Flex
             direction={{ sm: 'column', md: 'row' }}
-            mx="1.5rem"
+            mx={{ sm: 'auto', md: 'auto' }}
             maxH="330px"
             w={{ sm: '90%', xl: '95%' }}
             justifyContent={{ sm: 'center', md: 'space-between' }}
             align="center"
-            backdropFilter="saturate(200%) blur(50px)"
+            backdropFilter="saturate(200%) blur(10px)"
             position="absolute"
             boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
             border="2px solid"
