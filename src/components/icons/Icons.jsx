@@ -1,8 +1,8 @@
-import { createIcon } from "@chakra-ui/icons";
+import { createIcon } from '@chakra-ui/icons';
 
 export const AdobexdLogo = createIcon({
-  displayName: "AdobexdLogo",
-  viewBox: "0 0 24 24",
+  displayName: 'AdobexdLogo',
+  viewBox: '0 0 24 24',
   path: (
     <g clipPath="url(#clip0)">
       <path
@@ -18,8 +18,8 @@ export const AdobexdLogo = createIcon({
 });
 
 export const AtlassianLogo = createIcon({
-  displayName: "AtlassianLogo",
-  viewBox: "0 0 24 24",
+  displayName: 'AtlassianLogo',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <path
@@ -35,8 +35,8 @@ export const AtlassianLogo = createIcon({
 });
 
 export const CartIcon = createIcon({
-  displayName: "CartIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'CartIcon',
+  viewBox: '0 0 24 24',
   path: (
     <path
       fill="currentColor"
@@ -46,8 +46,8 @@ export const CartIcon = createIcon({
 });
 
 export const ClockIcon = createIcon({
-  displayName: "ClockIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'ClockIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <g>
@@ -67,28 +67,12 @@ export const ClockIcon = createIcon({
   ),
 });
 export const CreativeTimLogo = createIcon({
-  displayName: "CreativeTimLogo",
-  viewBox: "0 0 100 100",
+  displayName: 'CreativeTimLogo',
+  viewBox: '0 0 100 100',
   path: (
-    <g
-      xmlns="http://www.w3.org/2000/svg"
-      width="50px"
-      height="50px"
-      version="1.1"
-    >
-      <g
-        id="logo-creative-tim-black"
-        stroke="none"
-        strokeWidth="1"
-        fill="none"
-        fillRule="evenodd"
-      >
-        <g
-          id="icon"
-          transform="translate(15.000000, 19.000000)"
-          fill="currentColor"
-          fillRule="nonzero"
-        >
+    <g xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" version="1.1">
+      <g id="logo-creative-tim-black" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="icon" transform="translate(15.000000, 19.000000)" fill="currentColor" fillRule="nonzero">
           <path
             d="M66.4346744,1.49018376e-13 L3.56968951,1.49018376e-13 C1.59820443,1.49018376e-13 -2.98036753e-13,1.59820443 -2.98036753e-13,3.56968951 L-2.98036753e-13,33.5035241 C-2.98036753e-13,35.4750091 1.59820443,37.0732136 3.56968951,37.0732136 L16.4677598,37.0732136 L16.4677598,66.4346744 C16.4666001,67.3810129 16.8417189,68.288989 17.5104719,68.9585615 C18.1792249,69.628134 19.0867408,70.0043639 20.03308,70.0043639 L49.9669146,70.0043639 C51.9383997,70.0043639 53.5366041,68.4061595 53.5366041,66.4346744 L53.5366041,37.0863214 L66.4346744,37.0863214 C67.3810136,37.0863221 68.2885296,36.7100915 68.9572826,36.0405189 C69.6260355,35.3709464 70.0011544,34.4629704 70,33.5166319 L70,3.56968951 C70.0011544,2.62335099 69.6260355,1.71537495 68.9572826,1.04580242 C68.2885296,0.37622988 67.3810136,1.49018376e-13 66.4346744,1.49018376e-13 Z M4.13769396,4.14206323 L32.9311503,4.14206323 L32.9311503,32.9355196 L4.13769396,32.9355196 L4.13769396,4.14206323 Z M49.3989102,65.86667 L20.6054538,65.86667 L20.6054538,37.0863214 L49.3989102,37.0863214 L49.3989102,65.86667 Z M65.8623007,32.9355196 L37.0688443,32.9355196 L37.0688443,4.14206323 L65.8623007,4.14206323 L65.8623007,32.9355196 Z"
             id="Shape"
@@ -123,8 +107,8 @@ export const CreativeTimLogo = createIcon({
 });
 
 export const CreditIcon = createIcon({
-  displayName: "CreditIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'CreditIcon',
+  viewBox: '0 0 24 24',
   path: (
     <path
       fill="currentColor"
@@ -134,8 +118,8 @@ export const CreditIcon = createIcon({
 });
 
 export const DashboardLogo = createIcon({
-  displayName: "DashboardLogo",
-  viewBox: "0 0 1000 257",
+  displayName: 'DashboardLogo',
+  viewBox: '0 0 1000 257',
   path: (
     <g width="998" height="257" viewBox="0 0 998 257" fill="none">
       <g clipPath="url(#clip0)">
@@ -170,14 +154,7 @@ export const DashboardLogo = createIcon({
         />
       </g>
       <defs>
-        <linearGradient
-          id="paint0_linear"
-          x1="128.5"
-          y1="0"
-          x2="128.5"
-          y2="257"
-          gradientUnits="userSpaceOnUse"
-        >
+        <linearGradient id="paint0_linear" x1="128.5" y1="0" x2="128.5" y2="257" gradientUnits="userSpaceOnUse">
           <stop stop-color="#7BCBD4" />
           <stop offset="1" stop-color="#29C6B7" />
         </linearGradient>
@@ -190,8 +167,8 @@ export const DashboardLogo = createIcon({
 });
 
 export const DashboardLogoWhite = createIcon({
-  displayName: "DashboardLogo",
-  viewBox: "0 0 163.5 42",
+  displayName: 'DashboardLogo',
+  viewBox: '0 0 163.5 42',
   path: (
     <g fill="none">
       <path
@@ -207,8 +184,8 @@ export const DashboardLogoWhite = createIcon({
 });
 
 export const DocumentIcon = createIcon({
-  displayName: "DocumentIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'DocumentIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <path
@@ -224,8 +201,8 @@ export const DocumentIcon = createIcon({
 });
 
 export const GlobeIcon = createIcon({
-  displayName: "GlobeIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'GlobeIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <path
@@ -267,8 +244,8 @@ export const GlobeIcon = createIcon({
 });
 
 export const HelpIcon = createIcon({
-  displayName: "HelpIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'HelpIcon',
+  viewBox: '0 0 24 24',
   path: (
     <path
       fill="currentColor"
@@ -278,8 +255,8 @@ export const HelpIcon = createIcon({
 });
 
 export const HomeIcon = createIcon({
-  displayName: "HomeIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'HomeIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <path
@@ -295,8 +272,8 @@ export const HomeIcon = createIcon({
 });
 
 export const InvisionLogo = createIcon({
-  displayName: "InvisionLogo",
-  viewBox: "0 0 24 24",
+  displayName: 'InvisionLogo',
+  viewBox: '0 0 24 24',
   path: (
     <g clipPath="url(#clip0)">
       <path
@@ -312,8 +289,8 @@ export const InvisionLogo = createIcon({
 });
 
 export const JiraLogo = createIcon({
-  displayName: "JiraLogo",
-  viewBox: "0 0 24 24",
+  displayName: 'JiraLogo',
+  viewBox: '0 0 24 24',
   path: (
     <g clipPath="url(#clip0)">
       <path
@@ -333,16 +310,10 @@ export const JiraLogo = createIcon({
 });
 
 export const MastercardIcon = createIcon({
-  displayName: "MastercardIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'MastercardIcon',
+  viewBox: '0 0 24 24',
   path: (
-    <svg
-      width="24"
-      height="20"
-      viewBox="0 0 21 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="24" height="20" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="6.63158" cy="7.49999" r="6.63158" fill="#EB001B" />
       <circle cx="14.3686" cy="7.49999" r="6.63158" fill="#F79E1B" />
     </svg>
@@ -350,8 +321,8 @@ export const MastercardIcon = createIcon({
 });
 
 export const PayPalIcon = createIcon({
-  displayName: "PayPalIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'PayPalIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <path
@@ -367,8 +338,8 @@ export const PayPalIcon = createIcon({
 });
 
 export const PersonIcon = createIcon({
-  displayName: "PersonIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'PersonIcon',
+  viewBox: '0 0 24 24',
   path: (
     <path
       fill="currentColor"
@@ -378,8 +349,8 @@ export const PersonIcon = createIcon({
 });
 
 export const ProfileIcon = createIcon({
-  displayName: "ProfileIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'ProfileIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <path d="M0 0h24v24H0V0z" fill="transparent" />
@@ -392,8 +363,8 @@ export const ProfileIcon = createIcon({
 });
 
 export const RocketIcon = createIcon({
-  displayName: "RocketIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'RocketIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <path
@@ -409,8 +380,8 @@ export const RocketIcon = createIcon({
 });
 
 export const SettingsIcon = createIcon({
-  displayName: "SettingsIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'SettingsIcon',
+  viewBox: '0 0 24 24',
   // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
   path: (
     <g>
@@ -424,8 +395,8 @@ export const SettingsIcon = createIcon({
 });
 
 export const SlackLogo = createIcon({
-  displayName: "SlackLogo",
-  viewBox: "0 0 24 24",
+  displayName: 'SlackLogo',
+  viewBox: '0 0 24 24',
   path: (
     <g clipPath="url(#clip0)" fillRule="evenodd" clipRule="evenodd">
       <path
@@ -449,8 +420,8 @@ export const SlackLogo = createIcon({
 });
 
 export const SpotifyLogo = createIcon({
-  displayName: "SpotifyLogo",
-  viewBox: "0 0 24 24",
+  displayName: 'SpotifyLogo',
+  viewBox: '0 0 24 24',
   path: (
     <g clipPath="url(#clip0)">
       <path
@@ -463,8 +434,8 @@ export const SpotifyLogo = createIcon({
 
 export const SupportIcon = createIcon({
   // Doesn't display the full icon without w and h being specified
-  displayName: "BuildIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'BuildIcon',
+  viewBox: '0 0 24 24',
   path: (
     <path
       fill="currentColor"
@@ -474,8 +445,8 @@ export const SupportIcon = createIcon({
 });
 
 export const StatsIcon = createIcon({
-  displayName: "StatsIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'StatsIcon',
+  viewBox: '0 0 24 24',
   path: (
     <path
       fill="currentColor"
@@ -485,8 +456,8 @@ export const StatsIcon = createIcon({
 });
 
 export const WalletIcon = createIcon({
-  displayName: "WalletIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'WalletIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g>
       <path
@@ -502,22 +473,93 @@ export const WalletIcon = createIcon({
 });
 
 export const VisaIcon = createIcon({
-  displayName: "VisaIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'VisaIcon',
+  viewBox: '0 0 24 24',
   path: (
-    <svg
-      width="26"
-      height="20"
-      viewBox="0 0 30 9"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="26" height="20" viewBox="0 0 30 9" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M12.6708 2.96349C12.6568 4.15055 13.653 4.81298 14.4034 5.20684C15.1744 5.61099 15.4333 5.87013 15.4304 6.23147C15.4245 6.78459 14.8153 7.02862 14.2452 7.03812C13.2505 7.05475 12.6723 6.74889 12.2125 6.51753L11.8542 8.32341C12.3155 8.55247 13.1696 8.75217 14.0554 8.76087C16.1345 8.76087 17.4947 7.65543 17.5021 5.94145C17.5102 3.76625 14.7087 3.64579 14.7278 2.67348C14.7344 2.37871 14.9956 2.06408 15.568 1.98406C15.8512 1.94368 16.6332 1.91274 17.5198 2.35252L17.8677 0.605286C17.391 0.418253 16.7782 0.239136 16.0153 0.239136C14.0583 0.239136 12.6819 1.35962 12.6708 2.96349ZM21.2115 0.389687C20.8319 0.389687 20.5118 0.628245 20.3691 0.99433L17.3991 8.63249H19.4767L19.8901 7.40183H22.429L22.6689 8.63249H24.5L22.9021 0.389687H21.2115ZM21.5021 2.61641L22.1016 5.7116H20.4596L21.5021 2.61641ZM10.1518 0.389687L8.51418 8.63249H10.4939L12.1308 0.389687H10.1518ZM7.22303 0.389687L5.16233 6.00003L4.32878 1.22966C4.23097 0.697187 3.84472 0.389687 3.41579 0.389687H0.0471011L0 0.629037C0.691574 0.790671 1.47729 1.0514 1.95326 1.33033C2.24457 1.50067 2.32775 1.64964 2.42336 2.05458L4.00214 8.63249H6.0945L9.3021 0.389687H7.22303Z"
         fill="#4318FF"
       />
+    </svg>
+  ),
+});
+
+export const MetaMask = createIcon({
+  displayName: 'MetaMask',
+  viewBox: '0 0 24 24',
+  path: (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 212 189">
+      <g fill="none" fill-rule="evenodd">
+        <polygon
+          fill="#CDBDB2"
+          points="60.75 173.25 88.313 180.563 88.313 171 90.563 168.75 106.313 168.75 106.313 180 106.313 187.875 89.438 187.875 68.625 178.875"
+        />
+        <polygon
+          fill="#CDBDB2"
+          points="105.75 173.25 132.75 180.563 132.75 171 135 168.75 150.75 168.75 150.75 180 150.75 187.875 133.875 187.875 113.063 178.875"
+          transform="matrix(-1 0 0 1 256.5 0)"
+        />
+        <polygon
+          fill="#393939"
+          points="90.563 152.438 88.313 171 91.125 168.75 120.375 168.75 123.75 171 121.5 152.438 117 149.625 94.5 150.188"
+        />
+        <polygon fill="#F89C35" points="75.375 27 88.875 58.5 95.063 150.188 117 150.188 123.75 58.5 136.125 27" />
+        <polygon
+          fill="#F89D35"
+          points="16.313 96.188 .563 141.75 39.938 139.5 65.25 139.5 65.25 119.813 64.125 79.313 58.5 83.813"
+        />
+        <polygon fill="#D87C30" points="46.125 101.25 92.25 102.375 87.188 126 65.25 120.375" />
+        <polygon fill="#EA8D3A" points="46.125 101.813 65.25 119.813 65.25 137.813" />
+        <polygon fill="#F89D35" points="65.25 120.375 87.75 126 95.063 150.188 90 153 65.25 138.375" />
+        <polygon fill="#EB8F35" points="65.25 138.375 60.75 173.25 90.563 152.438" />
+        <polygon fill="#EA8E3A" points="92.25 102.375 95.063 150.188 86.625 125.719" />
+        <polygon fill="#D87C30" points="39.375 138.938 65.25 138.375 60.75 173.25" />
+        <polygon fill="#EB8F35" points="12.938 188.438 60.75 173.25 39.375 138.938 .563 141.75" />
+        <polygon fill="#E8821E" points="88.875 58.5 64.688 78.75 46.125 101.25 92.25 102.938" />
+        <polygon fill="#DFCEC3" points="60.75 173.25 90.563 152.438 88.313 170.438 88.313 180.563 68.063 176.625" />
+        <polygon
+          fill="#DFCEC3"
+          points="121.5 173.25 150.75 152.438 148.5 170.438 148.5 180.563 128.25 176.625"
+          transform="matrix(-1 0 0 1 272.25 0)"
+        />
+        <polygon
+          fill="#393939"
+          points="70.313 112.5 64.125 125.438 86.063 119.813"
+          transform="matrix(-1 0 0 1 150.188 0)"
+        />
+        <polygon fill="#E88F35" points="12.375 .563 88.875 58.5 75.938 27" />
+        <path
+          fill="#8E5A30"
+          d="M12.3750002,0.562500008 L2.25000003,31.5000005 L7.87500012,65.250001 L3.93750006,67.500001 L9.56250014,72.5625 L5.06250008,76.5000011 L11.25,82.1250012 L7.31250011,85.5000013 L16.3125002,96.7500014 L58.5000009,83.8125012 C79.1250012,67.3125004 89.2500013,58.8750003 88.8750013,58.5000009 C88.5000013,58.1250009 63.0000009,38.8125006 12.3750002,0.562500008 Z"
+        />
+        <g transform="matrix(-1 0 0 1 211.5 0)">
+          <polygon
+            fill="#F89D35"
+            points="16.313 96.188 .563 141.75 39.938 139.5 65.25 139.5 65.25 119.813 64.125 79.313 58.5 83.813"
+          />
+          <polygon fill="#D87C30" points="46.125 101.25 92.25 102.375 87.188 126 65.25 120.375" />
+          <polygon fill="#EA8D3A" points="46.125 101.813 65.25 119.813 65.25 137.813" />
+          <polygon fill="#F89D35" points="65.25 120.375 87.75 126 95.063 150.188 90 153 65.25 138.375" />
+          <polygon fill="#EB8F35" points="65.25 138.375 60.75 173.25 90 153" />
+          <polygon fill="#EA8E3A" points="92.25 102.375 95.063 150.188 86.625 125.719" />
+          <polygon fill="#D87C30" points="39.375 138.938 65.25 138.375 60.75 173.25" />
+          <polygon fill="#EB8F35" points="12.938 188.438 60.75 173.25 39.375 138.938 .563 141.75" />
+          <polygon fill="#E8821E" points="88.875 58.5 64.688 78.75 46.125 101.25 92.25 102.938" />
+          <polygon
+            fill="#393939"
+            points="70.313 112.5 64.125 125.438 86.063 119.813"
+            transform="matrix(-1 0 0 1 150.188 0)"
+          />
+          <polygon fill="#E88F35" points="12.375 .563 88.875 58.5 75.938 27" />
+          <path
+            fill="#8E5A30"
+            d="M12.3750002,0.562500008 L2.25000003,31.5000005 L7.87500012,65.250001 L3.93750006,67.500001 L9.56250014,72.5625 L5.06250008,76.5000011 L11.25,82.1250012 L7.31250011,85.5000013 L16.3125002,96.7500014 L58.5000009,83.8125012 C79.1250012,67.3125004 89.2500013,58.8750003 88.8750013,58.5000009 C88.5000013,58.1250009 63.0000009,38.8125006 12.3750002,0.562500008 Z"
+          />
+        </g>
+      </g>
     </svg>
   ),
 });
