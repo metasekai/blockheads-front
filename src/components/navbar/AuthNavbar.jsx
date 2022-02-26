@@ -71,7 +71,7 @@ export default function AuthNavbar(props) {
           <Text>Marketplace</Text>
         </Button>
       </a>
-      <a href="/inventory">
+      <a href="/profile">
         <Button
           fontSize="sm"
           ms="0px"
@@ -81,7 +81,7 @@ export default function AuthNavbar(props) {
           variant="transparent-with-icon"
           leftIcon={<PersonIcon color={navbarIcon} w="18px" h="18px" me="0px" />}
         >
-          <Text>Inventory</Text>
+          <Text>Profile</Text>
         </Button>
       </a>
       <a href="/mint">

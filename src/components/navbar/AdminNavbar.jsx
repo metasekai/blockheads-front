@@ -3,47 +3,36 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { HomeIcon, PersonIcon, RocketIcon } from '../icons/Icons';
-import {
-  Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Flex,
-  HStack,
-  Button,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Box, Flex, HStack, Button, Text, Image, useColorModeValue } from '@chakra-ui/react';
 
 import AdminNavbarLinks from './AdminNavbarLinks';
 import { useAuth } from '../../providers/AuthProvider';
+import Logo from '../../assets/img/logo.png';
 
 export default function AdminNavbar(props) {
-  const { brandText } = props;
   const auth = useAuth();
 
   // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
   let navbarIcon = useColorModeValue('gray.700', 'gray.200');
   let mainText = useColorModeValue('gray.700', 'gray.200');
-  let secondaryText = useColorModeValue('gray.400', 'gray.200');
   let navbarFilter = 'none';
-  let navbarBackdrop = 'blur(21px)';
   let navbarShadow = 'none';
-  let navbarBg = 'none';
-  let navbarBorder = 'transparent';
+  let navbarBg = useColorModeValue(
+    'linear-gradient(112.83deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.8) 110.84%)',
+    'linear-gradient(112.83deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0) 110.84%)'
+  );
+  let navbarBorder = useColorModeValue('1.5px solid #FFFFFF', '1.5px solid rgba(255, 255, 255, 0.31)');
   let secondaryMargin = '0px';
   let paddingX = '15px';
 
   if (props.secondary) {
-    navbarBackdrop = 'none';
     mainText = 'white';
-    secondaryText = 'white';
     secondaryMargin = '22px';
     paddingX = '30px';
   }
 
   var linksAuth = (
-    <HStack display={{ sm: 'none', lg: 'flex' }} ml={20}>
+    <HStack display={{ sm: 'none', lg: 'flex' }} ml={10}>
       <NavLink to="/marketplace">
         <Button
           fontSize="sm"
@@ -57,7 +46,7 @@ export default function AdminNavbar(props) {
           <Text>Marketplace</Text>
         </Button>
       </NavLink>
-      <NavLink to="/inventory">
+      <NavLink to="/profile">
         <Button
           fontSize="sm"
           ms="0px"
@@ -67,7 +56,7 @@ export default function AdminNavbar(props) {
           variant="transparent-with-icon"
           leftIcon={<PersonIcon color={navbarIcon} w="18px" h="18px" me="0px" />}
         >
-          <Text>Inventory</Text>
+          <Text>Profile</Text>
         </Button>
       </NavLink>
       <a href="/mint">
@@ -86,6 +75,22 @@ export default function AdminNavbar(props) {
     </HStack>
   );
 
+  const brand = (
+    <Box
+      display="flex"
+      lineHeight="100%"
+      fontWeight="bold"
+      justifyContent="center"
+      alignItems="center"
+      color={mainText}
+    >
+      <Image src={Logo} boxSize={7} mr={2} />
+      <Text fontSize="sm" mt="3px">
+        BLOCKHEADS
+      </Text>
+    </Box>
+  );
+
   return (
     <Flex
       position={'absolute'}
@@ -93,13 +98,8 @@ export default function AdminNavbar(props) {
       bg={navbarBg}
       borderColor={navbarBorder}
       filter={navbarFilter}
-      backdropFilter={navbarBackdrop}
       borderWidth="1.5px"
       borderStyle="solid"
-      transitionDelay="0s, 0s, 0s, 0s"
-      transitionDuration=" 0.25s, 0.25s, 0.25s, 0s"
-      transition-property="box-shadow, background-color, filter, border"
-      transitionTimingFunction="linear, linear, linear, linear"
       alignItems={{ xl: 'center' }}
       borderRadius="16px"
       display="flex"
@@ -109,8 +109,7 @@ export default function AdminNavbar(props) {
       mx="auto"
       mt={secondaryMargin}
       pb="8px"
-      left={document.documentElement.dir === 'rtl' ? '30px' : ''}
-      right={document.documentElement.dir === 'rtl' ? '' : '30px'}
+      left={'36px'}
       px={{
         sm: paddingX,
         md: '30px',
@@ -130,22 +129,7 @@ export default function AdminNavbar(props) {
         }}
         alignItems={{ xl: 'center' }}
       >
-        <Box mb={{ sm: '8px', md: '0px' }}>
-          <Breadcrumb>
-            <BreadcrumbItem color={mainText}>
-              <BreadcrumbLink href="#" color={secondaryText}>
-                Pages
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-
-            <BreadcrumbItem color={mainText}>
-              <BreadcrumbLink href="#" color={mainText}>
-                {brandText}
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
-          {/* Here we create navbar brand, based on route name */}
-        </Box>
+        {brand}
         {linksAuth}
         <Box ms="auto" w={{ sm: '100%', md: 'unset' }}>
           <AdminNavbarLinks auth={auth} onOpen={props.onOpen} logoText={'BLOCKHEADS'} secondary={props.secondary} />
