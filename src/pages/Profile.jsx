@@ -143,7 +143,7 @@ function Profile() {
                 <Button p="0px" bg="transparent" _hover={{ bg: 'none' }}>
                   <Flex
                     align="center"
-                    w={{ sm: '100%', lg: '135px' }}
+                    w={{ sm: '140px', lg: '140px' }}
                     bg="hsla(0,0%,100%,.3)"
                     borderRadius="15px"
                     justifyContent="center"
@@ -166,8 +166,8 @@ function Profile() {
       <Card
         p="16px"
         mt="0px"
-        mb="24px"
-        backdropFilter="saturate(200%) blur(50px)"
+        mb={{ sm: '8px', md: '24px' }}
+        backdropFilter="saturate(250%) blur(50px)"
         boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
         border="2px solid"
         borderColor={borderProfileColor}
@@ -210,14 +210,14 @@ function Profile() {
             </CardHeader>
             <CardBody px="5px">
               <Flex direction="column">
-                <Wrap spacing="24px" mb="16px">
+                <Wrap spacing="8px" mb="16px">
                   <WrapItem>
                     <Card
                       minW={'150px'}
                       p="16px"
                       mt="0px"
-                      mb="24px"
-                      backdropFilter="saturate(200%) blur(50px)"
+                      mb={{ sm: '2px', md: '16px' }}
+                      backdropFilter="saturate(100%) blur(50px)"
                       boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
                       border="2px solid"
                       borderColor={borderProfileColor}
@@ -237,8 +237,8 @@ function Profile() {
                       minW={'150px'}
                       p="16px"
                       mt="0px"
-                      mb="24px"
-                      backdropFilter="saturate(200%) blur(50px)"
+                      mb={{ sm: '2px', md: '16px' }}
+                      backdropFilter="saturate(100%) blur(50px)"
                       boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
                       border="2px solid"
                       borderColor={borderProfileColor}
@@ -258,8 +258,8 @@ function Profile() {
                       minW={'150px'}
                       p="16px"
                       mt="0px"
-                      mb="24px"
-                      backdropFilter="saturate(200%) blur(50px)"
+                      mb={{ sm: '2px', md: '16px' }}
+                      backdropFilter="saturate(100%) blur(50px)"
                       boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
                       border="2px solid"
                       borderColor={borderProfileColor}
@@ -275,7 +275,7 @@ function Profile() {
                     </Card>
                   </WrapItem>
                 </Wrap>
-                <Flex align="center" mb="18px">
+                <Flex align={{ sm: 'left', md: 'center' }} mb="18px" flexDir={{ sm: 'column', md: 'row' }}>
                   <Text fontSize="sm" color={textColor} fontWeight="bold" me="10px">
                     Wallet Address:{' '}
                   </Text>
@@ -283,7 +283,7 @@ function Profile() {
                     {auth && auth.address}
                   </Text>
                 </Flex>
-                <Flex align="center" mb="18px">
+                <Flex align={{ sm: 'left', md: 'center' }} mb="18px" flexDir={{ sm: 'column', md: 'row' }}>
                   <Text fontSize="sm" color={textColor} fontWeight="bold" me="10px">
                     Email:{' '}
                   </Text>
