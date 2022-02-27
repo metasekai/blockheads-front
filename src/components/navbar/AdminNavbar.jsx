@@ -103,13 +103,13 @@ export default function AdminNavbar(props) {
       alignItems={{ xl: 'center' }}
       borderRadius="16px"
       display="flex"
-      minH="75px"
+      minH={{ sm: 'auto', md: '75px' }}
       justifyContent={{ xl: 'center' }}
       lineHeight="25.6px"
       mx="auto"
       mt={secondaryMargin}
       pb="8px"
-      left={'36px'}
+      left={{ sm: '16px', xl: '36px' }}
       px={{
         sm: paddingX,
         md: '30px',

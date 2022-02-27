@@ -65,7 +65,8 @@ function Profile() {
       <EmailPassForm isOpen={isOpen} onClose={onClose} />
       <ChangeNickname isOpen={openNick} onClose={onCloseNick} />
       <Box
-        mb={{ sm: '205px', md: '75px', xl: '70px' }}
+        mb={{ sm: '95px', md: '75px', xl: '70px' }}
+        mt={{ sm: '-10px', md: '-10px' }}
         borderRadius="15px"
         px="0px"
         display="flex"
@@ -86,12 +87,12 @@ function Profile() {
         >
           <Flex
             direction={{ sm: 'column', md: 'row' }}
-            mx="1.5rem"
+            mx={{ sm: 'auto', md: 'auto' }}
             maxH="330px"
             w={{ sm: '90%', xl: '95%' }}
             justifyContent={{ sm: 'center', md: 'space-between' }}
             align="center"
-            backdropFilter="saturate(200%) blur(50px)"
+            backdropFilter="saturate(200%) blur(10px)"
             position="absolute"
             boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
             border="2px solid"
@@ -142,7 +143,7 @@ function Profile() {
                 <Button p="0px" bg="transparent" _hover={{ bg: 'none' }}>
                   <Flex
                     align="center"
-                    w={{ sm: '100%', lg: '135px' }}
+                    w={{ sm: '140px', lg: '140px' }}
                     bg="hsla(0,0%,100%,.3)"
                     borderRadius="15px"
                     justifyContent="center"
@@ -165,8 +166,8 @@ function Profile() {
       <Card
         p="16px"
         mt="0px"
-        mb="24px"
-        backdropFilter="saturate(200%) blur(50px)"
+        mb={{ sm: '8px', md: '24px' }}
+        backdropFilter="saturate(250%) blur(50px)"
         boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
         border="2px solid"
         borderColor={borderProfileColor}
@@ -209,14 +210,14 @@ function Profile() {
             </CardHeader>
             <CardBody px="5px">
               <Flex direction="column">
-                <Wrap spacing="24px" mb="16px">
+                <Wrap spacing="8px" mb="16px">
                   <WrapItem>
                     <Card
                       minW={'150px'}
                       p="16px"
                       mt="0px"
-                      mb="24px"
-                      backdropFilter="saturate(200%) blur(50px)"
+                      mb={{ sm: '2px', md: '16px' }}
+                      backdropFilter="saturate(100%) blur(50px)"
                       boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
                       border="2px solid"
                       borderColor={borderProfileColor}
@@ -236,8 +237,8 @@ function Profile() {
                       minW={'150px'}
                       p="16px"
                       mt="0px"
-                      mb="24px"
-                      backdropFilter="saturate(200%) blur(50px)"
+                      mb={{ sm: '2px', md: '16px' }}
+                      backdropFilter="saturate(100%) blur(50px)"
                       boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
                       border="2px solid"
                       borderColor={borderProfileColor}
@@ -257,8 +258,8 @@ function Profile() {
                       minW={'150px'}
                       p="16px"
                       mt="0px"
-                      mb="24px"
-                      backdropFilter="saturate(200%) blur(50px)"
+                      mb={{ sm: '2px', md: '16px' }}
+                      backdropFilter="saturate(100%) blur(50px)"
                       boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
                       border="2px solid"
                       borderColor={borderProfileColor}
@@ -274,7 +275,7 @@ function Profile() {
                     </Card>
                   </WrapItem>
                 </Wrap>
-                <Flex align="center" mb="18px">
+                <Flex align={{ sm: 'left', md: 'center' }} mb="18px" flexDir={{ sm: 'column', md: 'row' }}>
                   <Text fontSize="sm" color={textColor} fontWeight="bold" me="10px">
                     Wallet Address:{' '}
                   </Text>
@@ -282,7 +283,7 @@ function Profile() {
                     {auth && auth.address}
                   </Text>
                 </Flex>
-                <Flex align="center" mb="18px">
+                <Flex align={{ sm: 'left', md: 'center' }} mb="18px" flexDir={{ sm: 'column', md: 'row' }}>
                   <Text fontSize="sm" color={textColor} fontWeight="bold" me="10px">
                     Email:{' '}
                   </Text>

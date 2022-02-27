@@ -15,7 +15,19 @@ export default function HeaderLinks(props) {
   let bgButton = useColorModeValue('linear-gradient(81.62deg, #313860 2.25%, #151928 79.87%)', 'gray.600');
 
   return (
-    <Flex pe={{ sm: '0px', md: '16px' }} w={{ sm: '100%', md: 'auto' }} alignItems="center" flexDirection="row">
+    <Flex
+      mt={'4px'}
+      pe={{ sm: '0px', md: '16px' }}
+      w={{ sm: '100%', md: 'auto' }}
+      alignItems="center"
+      flexDirection="row"
+      display={{ sm: 'flex' }}
+      justifyContent={{ sm: 'flex-end', md: 'inherit' }}
+      position={{ sm: 'absolute', md: 'relative' }}
+      width="100%"
+      top={0}
+      right={{ sm: 4, md: 0 }}
+    >
       {props.auth.connected ? (
         <Button
           disabled={true}
@@ -52,7 +64,7 @@ export default function HeaderLinks(props) {
         </Button>
       )}
       <SidebarResponsive logoText={props.logoText} secondary={props.secondary} routes={routes} {...rest} />
-      <Box onClick={toggleColorMode} _hover={{ cursor: 'pointer' }} ml={1}>
+      <Box onClick={toggleColorMode} _hover={{ cursor: 'pointer' }} ml={1} mt={1}>
         {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
       </Box>
     </Flex>
